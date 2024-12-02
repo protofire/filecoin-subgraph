@@ -1,0 +1,113 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ISteerPeriphery",
+  "sourceName": "contracts/interfaces/ISteerPeriphery.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "strategiesByCreator",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "execBundle",
+              "type": "string"
+            },
+            {
+              "internalType": "uint128",
+              "name": "maxGasCost",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "maxGasPerAction",
+              "type": "uint128"
+            },
+            {
+              "internalType": "string",
+              "name": "strategyDecodingInfo",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct IStrategyRegistry.RegisteredStrategy",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_strategyId",
+          "type": "uint256"
+        }
+      ],
+      "name": "vaultsByStrategy",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum IVaultRegistry.VaultState",
+              "name": "state",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "vaultID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "strategyInfo",
+              "type": "bytes"
+            },
+            {
+              "internalType": "address",
+              "name": "vaultAddress",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct IVaultRegistry.VaultData",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

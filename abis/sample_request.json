@@ -1,0 +1,73 @@
+{
+    "property_key" : "5e1475ccf934cb155b9d17dc",
+    "data" : [{
+        "customers" : [{
+            "profile_id": "2463424",
+            "is_primary": true,
+            "title": "Mr.",
+            "first_name" : "Jagdish",
+            "last_name" : "Kumar",
+            "second_last_name" : "",
+            "phone" : "7643435576",
+            "email" : "abc@xyz.com",
+            "gender": "Male",
+            "birthday": "19900201",
+            "age": 30,
+            "type": "Adult",
+            "nationality": "Indian",
+            "language_code": "en",
+            "address" : {
+                "line1": "GK Homes, 2453 Phase 2",
+                "line2": "Near Gold mall",
+                "city": "Noida",
+                "country": "India",
+                "state": "UP",
+                "zip_code": "186261"
+            }
+        },
+        {
+            "profile_id": "24339824",
+            "title": "Mr.",
+            "first_name" : "Hemant",
+            "last_name" : "Kumar",
+            "second_last_name" : "Singh",
+            "phone" : "764325245576",
+            "email" : "aaa@zzz.com",
+            "gender": "Male",
+            "birthday": "19850120",
+            "age": 35,
+            "type": "Adult",
+            "nationality": "Indian",
+            "language_code": "en",
+            "address" : {
+                "line1": "GK Homes, 2453 Phase 2",
+                "line2": "Near Gold mall",
+                "city": "Noida",
+                "country": "India",
+                "state": "UP",
+                "zip_code": "186261"
+            }
+        }],
+        "booking_confirmation_number" : "1020",
+        "booking_number" : "5702",
+        "start_at" : "20190803 17:17:50",
+        "end_at" : "20190805 16:16:09",
+        "reservation_state" : "processed",
+        "room_type" : "DLX",
+        "room_number" : "123",
+        "booking_source" : "booking.com",
+        "currency": "$",
+        "extra_beds_count": 1,
+        "final_rate": 1000,
+        "adult_count": 2,
+        "child_count": 0,
+        "market_segment": "FTD",
+        "rate_plan_code": "RACK",
+        "gaurantee_method": "CARD",
+        "room_rate": 1000,
+	"nightly_rate": "1000",
+	"num_of_rooms": 2,
+	"checkin_time": "09:45",
+	"checkout_time": "11:00"
+    }]
+}

@@ -1,0 +1,36 @@
+{
+  "filecoin": {
+    "KeeperRegistry": {
+      "address": "0x1A7e75715d157736103eC429Ff7079994D907472",
+      "startBlock": 4333359
+    },
+    "Orchestrator": {
+      "address": "0x8fB2Cd40046b08F155d06C3A31b69C1Bd2C971e2",
+      "startBlock": 4333373
+    },
+    "StrategyRegistry": {
+      "address": "0x317EEDB54711681056f37e10d5DE0B55455b476f",
+      "startBlock": 4333366
+    },
+    "VaultRegistry": {
+      "address": "0x38a07152ee64C7067fEeBA904D72ABc9a9DA0C77",
+      "startBlock": 4333381
+    },
+    "BundleRegistry": {
+      "address": "0x279228AAfd13Bb4642ABB772a248c78555DC39c4",
+      "startBlock": 4333421
+    },
+    "GasVault": {
+      "address": "0xe1C56f99a459ED47B629F3D818BcC84826bCed66",
+      "startBlock": 4333398
+    },
+    "WhitelistRegistry": {
+      "address": "0x09eb271b444d1db7163c8555919dE85b20Be7D1d",
+      "startBlock": 4333375
+    },
+    "SteerPeriphery": {
+      "address": "0xab36D30C1A1C683037Bd7AAC67f29B2e3ECC6576",
+      "startBlock": 4333415
+    }
+  }
+}

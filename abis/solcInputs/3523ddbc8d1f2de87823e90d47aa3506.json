@@ -1,0 +1,40 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/interfaces/IWhitelistRegistry.sol": {
+      "content": "// SPDX-License-Identifier: BUSL-1.1\r\npragma solidity 0.8.12;\r\n\r\ninterface IWhitelistRegistry {\r\n    event PermissionsAdded(\r\n        address whitelistManager,\r\n        address vault,\r\n        address[] addressesAdded\r\n    );\r\n    event PermissionsRemoved(\r\n        address whitelistManager,\r\n        address vault,\r\n        address[] addressesRemoved\r\n    );\r\n    event ManagerAdded(address vaultAddress, address manager);\r\n\r\n    function addPermissions(\r\n        address _vaultAddress,\r\n        address[] calldata _addresses\r\n    ) external;\r\n\r\n    function registerWhitelistManager(address manager) external;\r\n\r\n    function revokePermissions(\r\n        address _vaultAddress,\r\n        address[] calldata _addresses\r\n    ) external;\r\n}\r\n"
+    },
+    "contracts/WhitelistRegistry.sol": {
+      "content": "// SPDX-License-Identifier: BUSL-1.1\r\npragma solidity 0.8.12;\r\nimport \"./interfaces/IWhitelistRegistry.sol\";\r\n\r\ncontract WhitelistRegistry is IWhitelistRegistry {\r\n    /**\r\n     * @dev info, per address, of permissions. 0 = no permissions, 1 = whitelisted. This is only relevant for vaults with whitelists.\r\n     */\r\n    mapping(address => mapping(address => uint256)) public permissions;\r\n\r\n    mapping(address => address) public whitelistManagers;\r\n\r\n    /**\r\n     * @dev add whitelist permissions for any number of addresses.\r\n     * @param _vaultAddress the vault whose whitelist will be edited\r\n     * @param _addresses the addresses to be added to the whitelist\r\n     */\r\n    function addPermissions(\r\n        address _vaultAddress,\r\n        address[] calldata _addresses\r\n    ) external {\r\n        // Make sure caller is authorized\r\n        require(\r\n            msg.sender == whitelistManagers[_vaultAddress],\r\n            \"Only whitelist manager can call this function\"\r\n        );\r\n\r\n        // Add permissions\r\n        uint256 length = _addresses.length;\r\n        for (uint i = 0; i != length; i++) {\r\n            permissions[_vaultAddress][_addresses[i]] = 1;\r\n        }\r\n        emit PermissionsAdded(msg.sender, _vaultAddress, _addresses);\r\n    }\r\n\r\n    /**\r\n     * @dev function meant to be called by contracts (usually in initializer) to register a whitelist manager for that contract\r\n     * @param manager the address of the vault's whitelist manager\r\n     * No access control, since any given contract can only modify their own data here.\r\n     */\r\n    function registerWhitelistManager(address manager) external {\r\n        whitelistManagers[msg.sender] = manager;\r\n        emit ManagerAdded(msg.sender, manager);\r\n    }\r\n\r\n    /**\r\n     * @dev add whitelist permissions for any number of addresses.\r\n     * @param _vaultAddress the vault whose whitelist will be edited\r\n     * @param _addresses the addresses to be removed from the whitelist\r\n     */\r\n    function revokePermissions(\r\n        address _vaultAddress,\r\n        address[] calldata _addresses\r\n    ) external {\r\n        // Make sure caller is authorized\r\n        require(msg.sender == whitelistManagers[_vaultAddress]);\r\n\r\n        // Remove permissions\r\n        uint256 length = _addresses.length;\r\n        for (uint i = 0; i != length; i++) {\r\n            permissions[_vaultAddress][_addresses[i]] = 0;\r\n        }\r\n        emit PermissionsRemoved(msg.sender, _vaultAddress, _addresses);\r\n    }\r\n}\r\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "storageLayout",
+          "devdoc",
+          "userdoc",
+          "evm.gasEstimates",
+          "devdoc",
+          "userdoc"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

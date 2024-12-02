@@ -1,0 +1,277 @@
+{
+  "address": "0x93470e5d4aFFab0CE2E80D47be420C42F0EB9692",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "vaultAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "manager",
+          "type": "address"
+        }
+      ],
+      "name": "ManagerAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "whitelistManager",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "vault",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "addressesAdded",
+          "type": "address[]"
+        }
+      ],
+      "name": "PermissionsAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "whitelistManager",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "vault",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "addressesRemoved",
+          "type": "address[]"
+        }
+      ],
+      "name": "PermissionsRemoved",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_vaultAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_addresses",
+          "type": "address[]"
+        }
+      ],
+      "name": "addPermissions",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "permissions",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "manager",
+          "type": "address"
+        }
+      ],
+      "name": "registerWhitelistManager",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_vaultAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_addresses",
+          "type": "address[]"
+        }
+      ],
+      "name": "revokePermissions",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "whitelistManagers",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xa89caa40a315f1a5880ed2750d732ec4d8aca233542ea8ddb0142a38f629e94e",
+  "receipt": {
+    "to": null,
+    "from": "0x2745ec614C23854DdD02CB881f2e1b24ADa8c35C",
+    "contractAddress": "0x93470e5d4aFFab0CE2E80D47be420C42F0EB9692",
+    "transactionIndex": 1,
+    "gasUsed": "357238",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x479aa327c1bd4581221df247c316996c69d1e3f5f7de65b7ca02e594431b6f81",
+    "transactionHash": "0xa89caa40a315f1a5880ed2750d732ec4d8aca233542ea8ddb0142a38f629e94e",
+    "logs": [],
+    "blockNumber": 8886118,
+    "cumulativeGasUsed": "407739",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "cf44aef8b0521db207c6325488a9b9eb",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"vaultAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"manager\",\"type\":\"address\"}],\"name\":\"ManagerAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"whitelistManager\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"addressesAdded\",\"type\":\"address[]\"}],\"name\":\"PermissionsAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"whitelistManager\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"addressesRemoved\",\"type\":\"address[]\"}],\"name\":\"PermissionsRemoved\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_vaultAddress\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_addresses\",\"type\":\"address[]\"}],\"name\":\"addPermissions\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"permissions\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"manager\",\"type\":\"address\"}],\"name\":\"registerWhitelistManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_vaultAddress\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_addresses\",\"type\":\"address[]\"}],\"name\":\"revokePermissions\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"whitelistManagers\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"addPermissions(address,address[])\":{\"details\":\"add whitelist permissions for any number of addresses.\",\"params\":{\"_addresses\":\"the addresses to be added to the whitelist\",\"_vaultAddress\":\"the vault whose whitelist will be edited\"}},\"registerWhitelistManager(address)\":{\"details\":\"function meant to be called by contracts (usually in initializer) to register a whitelist manager for that contract\",\"params\":{\"manager\":\"the address of the vault's whitelist manager No access control, since any given contract can only modify their own data here.\"}},\"revokePermissions(address,address[])\":{\"details\":\"add whitelist permissions for any number of addresses.\",\"params\":{\"_addresses\":\"the addresses to be removed from the whitelist\",\"_vaultAddress\":\"the vault whose whitelist will be edited\"}}},\"stateVariables\":{\"permissions\":{\"details\":\"info, per address, of permissions. 0 = no permissions, 1 = whitelisted. This is only relevant for vaults with whitelists.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/WhitelistRegistry.sol\":\"WhitelistRegistry\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/WhitelistRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\r\\npragma solidity 0.8.12;\\r\\nimport \\\"./interfaces/IWhitelistRegistry.sol\\\";\\r\\n\\r\\ncontract WhitelistRegistry is IWhitelistRegistry {\\r\\n    /**\\r\\n     * @dev info, per address, of permissions. 0 = no permissions, 1 = whitelisted. This is only relevant for vaults with whitelists.\\r\\n     */\\r\\n    mapping(address => mapping(address => uint256)) public permissions;\\r\\n\\r\\n    mapping(address => address) public whitelistManagers;\\r\\n\\r\\n    /**\\r\\n     * @dev add whitelist permissions for any number of addresses.\\r\\n     * @param _vaultAddress the vault whose whitelist will be edited\\r\\n     * @param _addresses the addresses to be added to the whitelist\\r\\n     */\\r\\n    function addPermissions(\\r\\n        address _vaultAddress,\\r\\n        address[] calldata _addresses\\r\\n    ) external {\\r\\n        // Make sure caller is authorized\\r\\n        require(\\r\\n            msg.sender == whitelistManagers[_vaultAddress],\\r\\n            \\\"Only Whitelist Manager\\\"\\r\\n        );\\r\\n        mapping(address => uint256) storage _permissions = permissions[\\r\\n            _vaultAddress\\r\\n        ];\\r\\n        // Add permissions\\r\\n        uint256 addressCount = _addresses.length;\\r\\n        for (uint256 i; i != addressCount; ++i) {\\r\\n            _permissions[_addresses[i]] = 1;\\r\\n        }\\r\\n        emit PermissionsAdded(msg.sender, _vaultAddress, _addresses);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev function meant to be called by contracts (usually in initializer) to register a whitelist manager for that contract\\r\\n     * @param manager the address of the vault's whitelist manager\\r\\n     * No access control, since any given contract can only modify their own data here.\\r\\n     */\\r\\n    function registerWhitelistManager(address manager) external {\\r\\n        whitelistManagers[msg.sender] = manager;\\r\\n        emit ManagerAdded(msg.sender, manager);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev add whitelist permissions for any number of addresses.\\r\\n     * @param _vaultAddress the vault whose whitelist will be edited\\r\\n     * @param _addresses the addresses to be removed from the whitelist\\r\\n     */\\r\\n    function revokePermissions(\\r\\n        address _vaultAddress,\\r\\n        address[] calldata _addresses\\r\\n    ) external {\\r\\n        // Make sure caller is authorized\\r\\n        require(\\r\\n            msg.sender == whitelistManagers[_vaultAddress],\\r\\n            \\\"Only Whitelist Manager\\\"\\r\\n        );\\r\\n\\r\\n        mapping(address => uint256) storage _permissions = permissions[\\r\\n            _vaultAddress\\r\\n        ];\\r\\n        // Add permissions\\r\\n        uint256 addressCount = _addresses.length;\\r\\n        for (uint256 i; i != addressCount; ++i) {\\r\\n            _permissions[_addresses[i]] = 0;\\r\\n        }\\r\\n        emit PermissionsRemoved(msg.sender, _vaultAddress, _addresses);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x2efe03d09f41c1957f0c3711426ad63b14552b947531a1127f6d8084f2bdcc00\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/IWhitelistRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\r\\npragma solidity 0.8.12;\\r\\n\\r\\ninterface IWhitelistRegistry {\\r\\n    event PermissionsAdded(\\r\\n        address whitelistManager,\\r\\n        address vault,\\r\\n        address[] addressesAdded\\r\\n    );\\r\\n    event PermissionsRemoved(\\r\\n        address whitelistManager,\\r\\n        address vault,\\r\\n        address[] addressesRemoved\\r\\n    );\\r\\n    event ManagerAdded(address vaultAddress, address manager);\\r\\n\\r\\n    function addPermissions(\\r\\n        address _vaultAddress,\\r\\n        address[] calldata _addresses\\r\\n    ) external;\\r\\n\\r\\n    function registerWhitelistManager(address manager) external;\\r\\n\\r\\n    function revokePermissions(\\r\\n        address _vaultAddress,\\r\\n        address[] calldata _addresses\\r\\n    ) external;\\r\\n}\\r\\n\",\"keccak256\":\"0xebf85adf6ce72c6048be10b1bda21fc174035f0d09ef26740ef0c621f80a5341\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610580806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80630773e6ba1461005c5780631f9838b51461007157806331e8e0a2146100ac57806380300623146100ed578063ed316ad914610100575b600080fd5b61006f61006a3660046103cb565b610113565b005b61009961007f366004610451565b600060208181529281526040808220909352908152205481565b6040519081526020015b60405180910390f35b6100d56100ba366004610484565b6001602052600090815260409020546001600160a01b031681565b6040516001600160a01b0390911681526020016100a3565b61006f6100fb3660046103cb565b610238565b61006f61010e366004610484565b610349565b6001600160a01b0383811660009081526001602052604090205416331461017a5760405162461bcd60e51b815260206004820152601660248201527527b7363c902bb434ba32b634b9ba1026b0b730b3b2b960511b60448201526064015b60405180910390fd5b6001600160a01b03831660009081526020819052604081209082905b8181146101f35760018360008787858181106101b4576101b46104a6565b90506020020160208101906101c99190610484565b6001600160a01b031681526020810191909152604001600020556101ec816104bc565b9050610196565b507fd5ae75a4db3730e774830e7c64b00258bd9b241c6042829e01eeb1596ccd200b3386868660405161022994939291906104e5565b60405180910390a15050505050565b6001600160a01b0383811660009081526001602052604090205416331461029a5760405162461bcd60e51b815260206004820152601660248201527527b7363c902bb434ba32b634b9ba1026b0b730b3b2b960511b6044820152606401610171565b6001600160a01b03831660009081526020819052604081209082905b8181146103135760008360008787858181106102d4576102d46104a6565b90506020020160208101906102e99190610484565b6001600160a01b0316815260208101919091526040016000205561030c816104bc565b90506102b6565b507ffa59fdd7b076c65cfaf469a2ad3da44044ca6a834b1d4f536a09c6bbdfefff083386868660405161022994939291906104e5565b3360008181526001602090815260409182902080546001600160a01b0319166001600160a01b0386169081179091558251938452908301527f05a4006f300442cf8b7fdb885f5ee958812020bffb5c5a8e655fde64e5f987ed910160405180910390a150565b80356001600160a01b03811681146103c657600080fd5b919050565b6000806000604084860312156103e057600080fd5b6103e9846103af565b9250602084013567ffffffffffffffff8082111561040657600080fd5b818601915086601f83011261041a57600080fd5b81358181111561042957600080fd5b8760208260051b850101111561043e57600080fd5b6020830194508093505050509250925092565b6000806040838503121561046457600080fd5b61046d836103af565b915061047b602084016103af565b90509250929050565b60006020828403121561049657600080fd5b61049f826103af565b9392505050565b634e487b7160e01b600052603260045260246000fd5b60006000198214156104de57634e487b7160e01b600052601160045260246000fd5b5060010190565b6001600160a01b0385811682528481166020808401919091526060604084018190528301849052600091859160808501845b8781101561053c5783610529866103af565b1682529382019390820190600101610517565b50999850505050505050505056fea26469706673582212208430764e85bdae70e5b621cd5f3178d8e6ec5d01414cf655747e5a31071fe7c564736f6c634300080c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c80630773e6ba1461005c5780631f9838b51461007157806331e8e0a2146100ac57806380300623146100ed578063ed316ad914610100575b600080fd5b61006f61006a3660046103cb565b610113565b005b61009961007f366004610451565b600060208181529281526040808220909352908152205481565b6040519081526020015b60405180910390f35b6100d56100ba366004610484565b6001602052600090815260409020546001600160a01b031681565b6040516001600160a01b0390911681526020016100a3565b61006f6100fb3660046103cb565b610238565b61006f61010e366004610484565b610349565b6001600160a01b0383811660009081526001602052604090205416331461017a5760405162461bcd60e51b815260206004820152601660248201527527b7363c902bb434ba32b634b9ba1026b0b730b3b2b960511b60448201526064015b60405180910390fd5b6001600160a01b03831660009081526020819052604081209082905b8181146101f35760018360008787858181106101b4576101b46104a6565b90506020020160208101906101c99190610484565b6001600160a01b031681526020810191909152604001600020556101ec816104bc565b9050610196565b507fd5ae75a4db3730e774830e7c64b00258bd9b241c6042829e01eeb1596ccd200b3386868660405161022994939291906104e5565b60405180910390a15050505050565b6001600160a01b0383811660009081526001602052604090205416331461029a5760405162461bcd60e51b815260206004820152601660248201527527b7363c902bb434ba32b634b9ba1026b0b730b3b2b960511b6044820152606401610171565b6001600160a01b03831660009081526020819052604081209082905b8181146103135760008360008787858181106102d4576102d46104a6565b90506020020160208101906102e99190610484565b6001600160a01b0316815260208101919091526040016000205561030c816104bc565b90506102b6565b507ffa59fdd7b076c65cfaf469a2ad3da44044ca6a834b1d4f536a09c6bbdfefff083386868660405161022994939291906104e5565b3360008181526001602090815260409182902080546001600160a01b0319166001600160a01b0386169081179091558251938452908301527f05a4006f300442cf8b7fdb885f5ee958812020bffb5c5a8e655fde64e5f987ed910160405180910390a150565b80356001600160a01b03811681146103c657600080fd5b919050565b6000806000604084860312156103e057600080fd5b6103e9846103af565b9250602084013567ffffffffffffffff8082111561040657600080fd5b818601915086601f83011261041a57600080fd5b81358181111561042957600080fd5b8760208260051b850101111561043e57600080fd5b6020830194508093505050509250925092565b6000806040838503121561046457600080fd5b61046d836103af565b915061047b602084016103af565b90509250929050565b60006020828403121561049657600080fd5b61049f826103af565b9392505050565b634e487b7160e01b600052603260045260246000fd5b60006000198214156104de57634e487b7160e01b600052601160045260246000fd5b5060010190565b6001600160a01b0385811682528481166020808401919091526060604084018190528301849052600091859160808501845b8781101561053c5783610529866103af565b1682529382019390820190600101610517565b50999850505050505050505056fea26469706673582212208430764e85bdae70e5b621cd5f3178d8e6ec5d01414cf655747e5a31071fe7c564736f6c634300080c0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "addPermissions(address,address[])": {
+        "details": "add whitelist permissions for any number of addresses.",
+        "params": {
+          "_addresses": "the addresses to be added to the whitelist",
+          "_vaultAddress": "the vault whose whitelist will be edited"
+        }
+      },
+      "registerWhitelistManager(address)": {
+        "details": "function meant to be called by contracts (usually in initializer) to register a whitelist manager for that contract",
+        "params": {
+          "manager": "the address of the vault's whitelist manager No access control, since any given contract can only modify their own data here."
+        }
+      },
+      "revokePermissions(address,address[])": {
+        "details": "add whitelist permissions for any number of addresses.",
+        "params": {
+          "_addresses": "the addresses to be removed from the whitelist",
+          "_vaultAddress": "the vault whose whitelist will be edited"
+        }
+      }
+    },
+    "stateVariables": {
+      "permissions": {
+        "details": "info, per address, of permissions. 0 = no permissions, 1 = whitelisted. This is only relevant for vaults with whitelists."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 22632,
+        "contract": "contracts/WhitelistRegistry.sol:WhitelistRegistry",
+        "label": "permissions",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+      },
+      {
+        "astId": 22636,
+        "contract": "contracts/WhitelistRegistry.sol:WhitelistRegistry",
+        "label": "whitelistManagers",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_address)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_address)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => address)",
+        "numberOfBytes": "32",
+        "value": "t_address"
+      },
+      "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(address => uint256))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_uint256)"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

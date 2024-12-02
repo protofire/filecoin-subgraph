@@ -1,0 +1,35 @@
+{
+  "name": "graph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build-filecoin": "graph build --network filecoin --network-file networks.json",
+   
+    
+    "create-filecoin": "graph create --node http://localhost:8120/ steerprotocol/steer-filecoin",
+    "remove-filecoin": "graph remove --node http://localhost:8120/ steerprotocol/steer-filecoin",
+    "deploy-filecoin": "graph deploy --node http://localhost:8120/ --ipfs http://localhost:5101 steerprotocol/steer-filecoin",
+   
+    "test": "graph test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@goldskycom/cli": "^3.1.0",
+    "@graphprotocol/graph-cli": "^0.48.0",
+    "@graphprotocol/graph-ts": "^0.29.3",
+    "@openzeppelin/subgraphs": "^0.1.8",
+    "dotenv": "^10.0.0",
+    "global": "^4.4.0",
+    "matchstick-as": "^0.4.2",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "tslib": "^2.3.1"
+  }
+}

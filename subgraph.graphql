@@ -1,0 +1,477 @@
+#Keeper Schema
+type Keeper @entity {
+  #Address of the keeper
+  id: ID!
+  #Version of the keeper, retrieved from the contract
+  bondHeld: BigDecimal!
+  #index of the keeper in the keeper registry
+  index: BigInt!
+  #Actions by keeper
+  actions: [OrchestratorAction!]! @derivedFrom(field: "from")
+  #Status of the keeper
+  status: String!
+  #the events when the keeper was queued or unqueued
+  queueTimeline: [QueueTimeline!]! @derivedFrom(field: "keeper")
+  #the times where the keeper was updated
+  permissionUpdates: [PermissionUpdate!]! @derivedFrom(field: "keeper")
+}
+
+type Runner @entity {
+  #Address of the runner
+  id: ID!
+  bondHeld: BigInt!
+  "Time when the runner was created"
+  createdAt: BigInt!
+}
+
+type QueueTimeline @entity {
+  id: ID!
+  keeper: Keeper!
+  timeDelay: BigInt!
+  queued: Boolean!
+}
+
+type PermissionUpdate @entity {
+  id: ID!
+  keeper: Keeper!
+  timeStamp: BigInt!
+  action: String!
+}
+
+#Orchestrator Actions
+
+type OrchestratorAction @entity {
+  #ID Of the action
+  id: ID!
+  #ID of the Action
+  timestamp: BigInt!
+  #Who Proposed the Action?
+  from: Keeper!
+  #Votes for the actions derived from keepers
+  votes: [Vote!]! @derivedFrom(field: "action")
+  #The time when the action was last updated
+  lastUpdated: BigInt
+  #Current state of the action
+  state: String!
+
+  status: String!
+
+  recipients: [String!]
+
+  actionFailed: [ActionFailure!]! @derivedFrom(field: "action")
+
+  vault: String!
+
+  transactionHash: String!
+
+  hash: String!
+
+  gasUsed: BigInt!
+}
+
+type Vote @entity {
+  id: ID!
+  timestamp: BigInt!
+  by: Keeper!
+  action: OrchestratorAction!
+}
+
+type ActionFailure @entity {
+  id: ID!
+  timeStamp: BigInt!
+  method: BigInt!
+  action: OrchestratorAction!
+}
+
+#Strategy Factory
+
+type Creator @entity {
+  id: ID!
+
+  strategies: [Strategy!]! @derivedFrom(field: "creator")
+
+  #Money the creator made out of all his/her/their strategies
+  revenue: BigDecimal! #Should be renamed to fees earned
+  #The withdrawal history of the creator
+  withdrawals: [CreatorWithdrawal!] @derivedFrom(field: "creator")
+  #Total value locked in all the creator's strategies
+  totalValueLocked: BigDecimal!
+  totalYield: BigDecimal!
+}
+
+type CreatorWithdrawal @entity {
+  id: ID!
+  timeStamp: BigInt!
+  creator: Creator!
+  amount: BigDecimal!
+}
+#Vault
+type Strategy @entity {
+  id: ID!
+  name: String!
+  vault: [Vault!]! @derivedFrom(field: "strategyToken")
+  createdAt: BigInt!
+  admin: String!
+  creator: Creator!
+  executionBundle: String!
+}
+
+type Vault @entity {
+  id: ID!
+  deployer: String!
+  token0: String!
+  token1: String!
+  totalAmount0: BigDecimal!
+  totalAmount1: BigDecimal!
+  createdAt: BigInt!
+  lastSnapshot: BigInt!
+  pool: String!
+  state: BigInt! #to be mapped as a string
+  statusUpdates: [VaultStateChanged!]! @derivedFrom(field: "vault")
+  strategyToken: Strategy!
+  "Statistics"
+  snapshots: [VaultSnapshot!]! @derivedFrom(field: "vaultAddress")
+  permissions: [WhiteListVaultPermission!]! @derivedFrom(field: "vault")
+  positions: [VaultPosition!]! @derivedFrom(field: "vault")
+  depositors: [Depositor!]! @derivedFrom(field: "vault")
+
+  annualPercentageYield: BigDecimal!
+  annualPercentageDailyYield: BigDecimal!
+  annualPercentageMonthlyYield: BigDecimal!
+  annualPercentageYearlyYield: BigDecimal!
+
+  lastTotalT0ValuePerLPT: BigDecimal!
+  accruedStrategistFees0: BigInt!
+  accruedStrategistFees1: BigInt!
+  fees0: BigInt!
+  fees1: BigInt!
+  beaconName: String!
+  jobs: [Job!]! @derivedFrom(field: "vaultAddress")
+  gasUsed: BigInt!
+  gasDeposited: BigInt!
+  totalLPTokensIssued: BigInt!
+  token1Symbol: String!
+  decimals: BigInt!
+  feeTier: BigInt!
+  name: String!
+  symbol: String!
+  token0Balance: BigInt!
+  token0Decimals: BigInt!
+  token0Name: String!
+  token0Symbol: String!
+  token1Balance: BigInt!
+  token1Decimals: BigInt!
+  token1Name: String!
+  payloadIpfs: String!
+  vaultManager: String!
+  averageFeeArrPerSecond: BigDecimal!
+  totalSnapshots: BigInt!
+  annualFeeARR: BigDecimal!
+  dailyFeeAPR: BigDecimal!
+  weeklyFeeAPR: BigDecimal!
+  totalValueLockedToken0: BigDecimal!
+  totalValueLockedToken1: BigDecimal!
+}
+
+type VaultSnapshot @entity {
+  id: ID!
+  timestamp: BigInt!
+  vaultAddress: Vault!
+  totalAmount0: BigInt!
+  totalAmount1: BigInt!
+  sqrtPriceX96: BigInt!
+  totalSupply: BigInt!
+  fees1: BigInt!
+  fees0: BigInt!
+  annualFeeAPR: BigDecimal!
+  dailyFeeAPR: BigDecimal!
+  weeklyFeeAPR: BigDecimal!
+  transactionHash: String!
+}
+
+type PrevVaultSnapshot @entity {
+  id: ID!
+  timestamp: BigInt!
+  vaultAddress: Vault!
+  totalAmount0: BigInt!
+  totalAmount1: BigInt!
+  sqrtPriceX96: BigInt!
+  totalSupply: BigInt!
+  fees1: BigInt!
+  fees0: BigInt!
+}
+
+type PrevDailyVaultSnapshot @entity {
+  id: ID!
+  timestamp: BigInt!
+  vaultAddress: Vault!
+  totalAmount0: BigInt!
+  totalAmount1: BigInt!
+  sqrtPriceX96: BigInt!
+  totalSupply: BigInt!
+  fees1: BigInt!
+  fees0: BigInt!
+}
+
+type PrevMonthlyVaultSnapshot @entity {
+  id: ID!
+  timestamp: BigInt!
+  vaultAddress: Vault!
+  totalAmount0: BigInt!
+  totalAmount1: BigInt!
+  sqrtPriceX96: BigInt!
+  totalSupply: BigInt!
+  fees1: BigInt!
+  fees0: BigInt!
+}
+
+type PrevAnnualVaultSnapshot @entity {
+  id: ID!
+  timestamp: BigInt!
+  vaultAddress: Vault!
+  totalAmount0: BigInt!
+  totalAmount1: BigInt!
+  sqrtPriceX96: BigInt!
+  totalSupply: BigInt!
+  fees1: BigInt!
+  fees0: BigInt!
+}
+
+type PrevWeeklyVaultSnapshot @entity {
+  id: ID!
+  timestamp: BigInt!
+  vaultAddress: Vault!
+  totalAmount0: BigInt!
+  totalAmount1: BigInt!
+  sqrtPriceX96: BigInt!
+  totalSupply: BigInt!
+  fees1: BigInt!
+  fees0: BigInt!
+  averageFeeArrPerSecond: BigDecimal!
+  totalSnapshots: BigInt!
+  weeklyFeeApr: BigDecimal!
+}
+
+type VaultStateChanged @entity {
+  id: ID!
+  timeStamp: BigInt!
+  vault: Vault!
+  status: BigInt!
+}
+
+type VaultDeposit @entity {
+  "Address of the depositor"
+  id: ID!
+  vault: Vault!
+  "Amount of tokens deposited"
+  amount0: BigDecimal!
+  amount1: BigDecimal!
+  "Token Addresses"
+  token0: String!
+  token1: String!
+  sender: String!
+  transactionHash: String!
+  "Time when the deposit was made"
+  timeStamp: BigInt!
+  shares: BigInt!
+  executor: String!
+  depositCaller: String!
+  blockNumber: BigInt!
+}
+
+type VaultWithdraw @entity {
+  "Address of the withdrawer"
+  id: ID!
+  vault: Vault!
+  "Amount of tokens withdrawn"
+  amount0: BigDecimal!
+  amount1: BigDecimal!
+  "Token Addresses"
+  token0: String!
+  token1: String!
+  "Time when the withdraw was made"
+  timeStamp: BigInt!
+  shares: BigInt!
+  sender: String!
+  transactionHash: String!
+  blockNumber: BigInt!
+}
+
+type Depositor @entity {
+  id: ID!
+  vault: Vault!
+  account: String!
+  executor: String!
+  depositCaller: String!
+  depositedAmount0: BigInt!
+  depositedAmount1: BigInt!
+  withdrawnAmount0: BigInt!
+  withdrawnAmount1: BigInt!
+  liquidityAmount0: BigInt!
+  liquidityAmount1: BigInt!
+  createdTimestamp: BigInt!
+  updatedTimestamp: BigInt!
+  shares: BigInt!
+}
+
+type VaultBeacon @entity {
+  "Address of the VaultBeacon"
+  id: ID!
+  address: String!
+  "IPFS Config for Beacon"
+  ipfsHash: String!
+  name: String!
+  "Beacon status"
+  status: String!
+  timestamp: BigInt!
+  updateTimestamp: BigInt!
+}
+
+type VaultPosition @entity {
+  id: ID!
+  upperTick: [BigInt!]!
+  lowerTick: [BigInt!]!
+  vault: Vault!
+  relativeWeight: [BigInt!]!
+  timestamp: BigInt!
+}
+
+type LiquiditySteer @entity {
+  id: ID!
+  vault: Vault!
+  timeStamp: BigInt!
+  tick: BigInt!
+}
+
+type OrchestratorReward @entity {
+  id: ID!
+  timeStamp: BigInt!
+  updatedTimeStamp: BigInt!
+  address: String!
+  reward: BigInt!
+  trackerId: OrchestratorRewardTracker!
+}
+
+type OrchestratorRewardTracker @entity {
+  id: ID!
+  timeStamp: BigInt!
+  rewards: [OrchestratorReward!]! @derivedFrom(field: "trackerId")
+}
+
+type OrchestratorRewardSnapshot @entity {
+  id: ID!
+  timeStamp: BigInt!
+  updatedTimeStamp: BigInt!
+  address: String!
+  reward: BigInt!
+}
+
+type Bundle @entity {
+  id: ID!
+  createdAt: BigInt!
+  bundle: String!
+  creator: String!
+  host: String!
+  source: String!
+  output: String!
+  active: Boolean!
+  infoHash: String!
+  hash: String!
+}
+
+type Job @entity {
+  id: ID!
+  name: String!
+  timestamp: BigInt!
+  jobInfo: [String!]!
+  targetAddresses: [String!]!
+  ipfsHash: String!
+  executions: [JobExecution!]! @derivedFrom(field: "jobId")
+  status: BigInt!
+  failedCounts: BigInt!
+  vaultAddress: Vault!
+  jobHash: String!
+  gasUsed: BigInt!
+}
+
+type JobExecution @entity {
+  id: ID!
+  timestamp: BigInt!
+  jobHash: String!
+  executor: String!
+  status: String!
+  jobIdString: String!
+  jobId: Job!
+}
+
+type JobGasDeposited @entity {
+  id: ID!
+  timestamp: BigInt!
+  creator: String!
+  amount: BigInt!
+}
+
+type JobGasWithdrawn @entity {
+  id: ID!
+  timestamp: BigInt!
+  creator: String!
+  amount: BigInt!
+}
+
+type VaultGasUsed @entity {
+  id: ID!
+  timestamp: BigInt!
+  vault: String!
+  actionHash: String
+  amount: BigInt!
+}
+
+type VaultGasDeposited @entity {
+  id: ID!
+  timestamp: BigInt!
+  vault: String!
+  origin: String!
+  amount: BigInt!
+}
+
+type VaultGasWithdrawn @entity {
+  id: ID!
+  timestamp: BigInt!
+  vault: String!
+  to: String!
+  amount: BigInt!
+}
+
+type WhiteListManager @entity {
+  id: ID!
+  address: String!
+  vault: String!
+  timestamp: BigInt!
+  permission: WhiteListVaultPermission! @derivedFrom(field: "manager")
+}
+
+type WhiteListVaultPermission @entity {
+  id: ID!
+  manager: WhiteListManager!
+  vault: Vault!
+  addresses: [String!]!
+  timestamp: BigInt!
+  updatedTimestamp: BigInt!
+}
+
+type LeaderBoard @entity {
+  id: ID!
+  address: String!
+  numStaticJobs: BigInt!
+  numApps: BigInt!
+  timestamp: BigInt!
+}
+
+type VaultTransfer @entity {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+}

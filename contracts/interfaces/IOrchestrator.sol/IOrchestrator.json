@@ -1,0 +1,357 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IOrchestrator",
+  "sourceName": "contracts/interfaces/IOrchestrator.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum IOrchestrator.ActionState",
+          "name": "_state",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "_hash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "_recipients",
+          "type": "address[]"
+        }
+      ],
+      "name": "ActionCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_rewardPerRequest",
+          "type": "uint256"
+        }
+      ],
+      "name": "ActionExecuted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ActionFailed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        }
+      ],
+      "name": "ActionRejected",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "_approved",
+          "type": "uint8"
+        }
+      ],
+      "name": "vote",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_member",
+          "type": "address"
+        }
+      ],
+      "name": "actionApprovalByUser",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "actionApprovalStatus",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "actionCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "actionThresholdPercent",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "action_approvals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_vote",
+          "type": "uint8"
+        }
+      ],
+      "name": "approveAction",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4[]",
+          "name": "_methods",
+          "type": "bytes4[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "_args",
+          "type": "bytes[]"
+        },
+        {
+          "internalType": "address",
+          "name": "targetAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_hash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_recipients",
+          "type": "address[]"
+        }
+      ],
+      "name": "createAction",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "actionId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "dynamicData",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "executeAction",
+      "outputs": [
+        {
+          "internalType": "enum IOrchestrator.ActionState",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_actionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getActionInfo",
+      "outputs": [
+        {
+          "internalType": "bytes4[]",
+          "name": "methods",
+          "type": "bytes4[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "args",
+          "type": "bytes[]"
+        },
+        {
+          "internalType": "address",
+          "name": "targetAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "enum IOrchestrator.ActionState",
+          "name": "state",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_gasVault",
+          "type": "address"
+        }
+      ],
+      "name": "setGasVault",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

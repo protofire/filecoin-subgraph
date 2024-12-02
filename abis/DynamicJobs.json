@@ -1,0 +1,603 @@
+{
+  "address": "0xd959C26864A3C4e76C206EeCdA34e705a465f797",
+  "abi": [
+    {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "jobHash",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "executor",
+                "type": "address"
+            }
+        ],
+        "name": "JobExecuted",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes[]",
+                "name": "jobInfo",
+                "type": "bytes[]"
+            },
+            {
+                "indexed": false,
+                "internalType": "address[]",
+                "name": "targetAddresses",
+                "type": "address[]"
+            },
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "jobHash",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "ipfsForJobDetails",
+                "type": "string"
+            }
+        ],
+        "name": "JobRegistered",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "jobHash",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "toggle",
+                "type": "uint256"
+            }
+        ],
+        "name": "JobToggledByCreator",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "previousOwner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "OwnershipTransferred",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "creator",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address[]",
+                "name": "_targetAddresses",
+                "type": "address[]"
+            },
+            {
+                "internalType": "bytes[]",
+                "name": "_userProvidedData",
+                "type": "bytes[]"
+            },
+            {
+                "internalType": "bytes[]",
+                "name": "_strategyProvidedData",
+                "type": "bytes[]"
+            }
+        ],
+        "name": "executeJob",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "gasBalance",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "gasVault",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_orchestrator",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes",
+                "name": "_params",
+                "type": "bytes"
+            }
+        ],
+        "name": "initialize",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "",
+                "type": "bytes32"
+            }
+        ],
+        "name": "jobState",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "keeperRegistry",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "orchestrator",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes[]",
+                "name": "_userProvidedData",
+                "type": "bytes[]"
+            },
+            {
+                "internalType": "address[]",
+                "name": "_targetAddresses",
+                "type": "address[]"
+            },
+            {
+                "internalType": "string",
+                "name": "_name",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_ipfsForJobDetails",
+                "type": "string"
+            }
+        ],
+        "name": "registerJob",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes[]",
+                "name": "_userProvidedData",
+                "type": "bytes[]"
+            },
+            {
+                "internalType": "address[]",
+                "name": "_targetAddresses",
+                "type": "address[]"
+            },
+            {
+                "internalType": "string",
+                "name": "_name",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_ipfsForJobDetails",
+                "type": "string"
+            }
+        ],
+        "name": "registerJobAndDepositGas",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "renounceOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "_jobHash",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_toggle",
+                "type": "uint256"
+            }
+        ],
+        "name": "setJobState",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address payable",
+                "name": "to",
+                "type": "address"
+            }
+        ],
+        "name": "withdrawGas",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+],
+  "transactionHash": "0x77dbb874440ee81892a6b262d6a93add42e7c87c51e442cc31eb65bfe8694c36",
+  "receipt": {
+    "to": null,
+    "from": "0xc42649a896eecc459F7fC56D458dC24Fe827fa8A",
+    "contractAddress": "0xd959C26864A3C4e76C206EeCdA34e705a465f797",
+    "transactionIndex": 34,
+    "gasUsed": "1151788",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000020000000000000800000000000000000000100000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000020000000000000000000000200000000000000000000000000000000000000000000000000000000000004000800000000000000001000000008000000000000000000000100000000000000000020000000000000000000000000000000040000000000000000000100000",
+    "blockHash": "0x720ee2a997a99f687bcbeeea9499b410740cb16293b7f5bd98978ad7acf41fb5",
+    "transactionHash": "0x77dbb874440ee81892a6b262d6a93add42e7c87c51e442cc31eb65bfe8694c36",
+    "logs": [
+      {
+        "transactionIndex": 34,
+        "blockNumber": 41535649,
+        "transactionHash": "0x77dbb874440ee81892a6b262d6a93add42e7c87c51e442cc31eb65bfe8694c36",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x000000000000000000000000c42649a896eecc459f7fc56d458dc24fe827fa8a",
+          "0x00000000000000000000000067b94473d81d0cd00849d563c94d0432ac988b49"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000073c127935966c0000000000000000000000000000000000000000000000000eb527eff90dad81d0000000000000000000000000000000000000000000015c594dbc4818871b57c000000000000000000000000000000000000000000000000eadebdd7fd81715d0000000000000000000000000000000000000000000015c5954f85a91bcb1c3c",
+        "logIndex": 129,
+        "blockHash": "0x720ee2a997a99f687bcbeeea9499b410740cb16293b7f5bd98978ad7acf41fb5"
+      }
+    ],
+    "blockNumber": 41535649,
+    "cumulativeGasUsed": "5571203",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "c724de2948cf424d67e09bba14db58da",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"jobHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"executor\",\"type\":\"address\"}],\"name\":\"JobExecuted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes[]\",\"name\":\"jobInfo\",\"type\":\"bytes[]\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"targetAddresses\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"jobHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"ipfsForJobDetails\",\"type\":\"string\"}],\"name\":\"JobRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"jobHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"toggle\",\"type\":\"uint256\"}],\"name\":\"JobToggledByCreator\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"creator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_targetAddresses\",\"type\":\"address[]\"},{\"internalType\":\"bytes[]\",\"name\":\"_userProvidedData\",\"type\":\"bytes[]\"},{\"internalType\":\"bytes[]\",\"name\":\"_strategyProvidedData\",\"type\":\"bytes[]\"}],\"name\":\"executeJob\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gasBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gasVault\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_vaultManager\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_orchestrator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"jobState\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"keeperRegistry\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"orchestrator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes[]\",\"name\":\"_userProvidedData\",\"type\":\"bytes[]\"},{\"internalType\":\"address[]\",\"name\":\"_targetAddresses\",\"type\":\"address[]\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_ipfsForJobDetails\",\"type\":\"string\"}],\"name\":\"registerJob\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes[]\",\"name\":\"_userProvidedData\",\"type\":\"bytes[]\"},{\"internalType\":\"address[]\",\"name\":\"_targetAddresses\",\"type\":\"address[]\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_ipfsForJobDetails\",\"type\":\"string\"}],\"name\":\"registerJobAndDepositGas\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_jobHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_toggle\",\"type\":\"uint256\"}],\"name\":\"setJobState\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"withdrawGas\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"custom:oz-upgrades-unsafe-allow\":\"constructor\"},\"executeJob(address[],bytes[],bytes[])\":{\"details\":\"Use this function to execute Jobs.Only Orchestrator can call this function.\",\"params\":{\"_strategyProvidedData\":\"are the encoded parameters sent on the time of creation or execution of action in orchestrator according to the strategy.\",\"_targetAddresses\":\"are the addresses of the contracts on which the jobs needs to be executed.\",\"_userProvidedData\":\"are the calldatas that are provided by the user at the registration time.\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"registerJob(bytes[],address[],string,string)\":{\"details\":\"Use this function to register jobs.\",\"params\":{\"_ipfsForJobDetails\":\"is the ipfs hash containing job details like the interval for job execution.\",\"_name\":\"should be the name of the job.\",\"_targetAddresses\":\"are the addresses of the contracts on which the jobs needs to be executed.\",\"_userProvidedData\":\"are the calldatas that are provided by the user at the registration time.\"}},\"registerJobAndDepositGas(bytes[],address[],string,string)\":{\"details\":\"Use this function to register jobs and deposit gas in one callSend the amount of gas that is needed to be deposited as msg.value.\",\"params\":{\"_ipfsForJobDetails\":\"is the ipfs hash containing job details like the interval for job execution.\",\"_name\":\"is the name of the job.\",\"_targetAddresses\":\"are the addresses of the contracts on which the jobs needs to be executed.\",\"_userProvidedData\":\"are the calldatas that are provided by the user at the registration time.\"}},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"setJobState(bytes32,uint256)\":{\"details\":\"Use this function to pause or unpause a job\",\"params\":{\"_jobHash\":\"is the keccak of encoded parameters and target addresses\",\"_toggle\":\"pass 1 to pause the job and pass 2 to unpause the job\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"withdrawGas(uint256,address)\":{\"details\":\"Use this function to withdraw gas associated to this vaultOnly creator of this vault can call this function\",\"params\":{\"_amount\":\"is the amount of ether in wei that creator of this contract wants to pull out\",\"to\":\"is the address at which the creator wants to pull the deposited ether out\"}}},\"stateVariables\":{\"jobState\":{\"details\":\"The mapping of jobState has 3 possiblities      1) 0 means not registered      2) 1 means registered and paused      3) 2 means unpaused and registered (active)\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/DynamicJobs.sol\":\"DynamicJobs\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/ContextUpgradeable.sol\\\";\\nimport \\\"../proxy/utils/Initializable.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract OwnableUpgradeable is Initializable, ContextUpgradeable {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    function __Ownable_init() internal onlyInitializing {\\n        __Context_init_unchained();\\n        __Ownable_init_unchained();\\n    }\\n\\n    function __Ownable_init_unchained() internal onlyInitializing {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n    uint256[49] private __gap;\\n}\\n\",\"keccak256\":\"0x9ffedb33e192f8821cbaead72596c79ea87fb28a73f8d3a9f5004449799f8e1b\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (proxy/utils/Initializable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../../utils/AddressUpgradeable.sol\\\";\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {ERC1967Proxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n *\\n * [CAUTION]\\n * ====\\n * Avoid leaving a contract uninitialized.\\n *\\n * An uninitialized contract can be taken over by an attacker. This applies to both a proxy and its implementation\\n * contract, which may impact the proxy. To initialize the implementation contract, you can either invoke the\\n * initializer manually, or you can include a constructor to automatically mark it as initialized when it is deployed:\\n *\\n * [.hljs-theme-light.nopadding]\\n * ```\\n * /// @custom:oz-upgrades-unsafe-allow constructor\\n * constructor() initializer {}\\n * ```\\n * ====\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     */\\n    bool private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Modifier to protect an initializer function from being invoked twice.\\n     */\\n    modifier initializer() {\\n        // If the contract is initializing we ignore whether _initialized is set in order to support multiple\\n        // inheritance patterns, but we only do this in the context of a constructor, because in other contexts the\\n        // contract may have been reentered.\\n        require(_initializing ? _isConstructor() : !_initialized, \\\"Initializable: contract is already initialized\\\");\\n\\n        bool isTopLevelCall = !_initializing;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n            _initialized = true;\\n        }\\n\\n        _;\\n\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n        }\\n    }\\n\\n    /**\\n     * @dev Modifier to protect an initialization function so that it can only be invoked by functions with the\\n     * {initializer} modifier, directly or indirectly.\\n     */\\n    modifier onlyInitializing() {\\n        require(_initializing, \\\"Initializable: contract is not initializing\\\");\\n        _;\\n    }\\n\\n    function _isConstructor() private view returns (bool) {\\n        return !AddressUpgradeable.isContract(address(this));\\n    }\\n}\\n\",\"keccak256\":\"0x68861bcc80cacbd498efde75aab6c74a486cc48262660d326c8d7530d9752097\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Address.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Collection of functions related to the address type\\n */\\nlibrary AddressUpgradeable {\\n    /**\\n     * @dev Returns true if `account` is a contract.\\n     *\\n     * [IMPORTANT]\\n     * ====\\n     * It is unsafe to assume that an address for which this function returns\\n     * false is an externally-owned account (EOA) and not a contract.\\n     *\\n     * Among others, `isContract` will return false for the following\\n     * types of addresses:\\n     *\\n     *  - an externally-owned account\\n     *  - a contract in construction\\n     *  - an address where a contract will be created\\n     *  - an address where a contract lived, but was destroyed\\n     * ====\\n     */\\n    function isContract(address account) internal view returns (bool) {\\n        // This method relies on extcodesize, which returns 0 for contracts in\\n        // construction, since the code is only stored at the end of the\\n        // constructor execution.\\n\\n        uint256 size;\\n        assembly {\\n            size := extcodesize(account)\\n        }\\n        return size > 0;\\n    }\\n\\n    /**\\n     * @dev Replacement for Solidity's `transfer`: sends `amount` wei to\\n     * `recipient`, forwarding all available gas and reverting on errors.\\n     *\\n     * https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost\\n     * of certain opcodes, possibly making contracts go over the 2300 gas limit\\n     * imposed by `transfer`, making them unable to receive funds via\\n     * `transfer`. {sendValue} removes this limitation.\\n     *\\n     * https://diligence.consensys.net/posts/2019/09/stop-using-soliditys-transfer-now/[Learn more].\\n     *\\n     * IMPORTANT: because control is transferred to `recipient`, care must be\\n     * taken to not create reentrancy vulnerabilities. Consider using\\n     * {ReentrancyGuard} or the\\n     * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].\\n     */\\n    function sendValue(address payable recipient, uint256 amount) internal {\\n        require(address(this).balance >= amount, \\\"Address: insufficient balance\\\");\\n\\n        (bool success, ) = recipient.call{value: amount}(\\\"\\\");\\n        require(success, \\\"Address: unable to send value, recipient may have reverted\\\");\\n    }\\n\\n    /**\\n     * @dev Performs a Solidity function call using a low level `call`. A\\n     * plain `call` is an unsafe replacement for a function call: use this\\n     * function instead.\\n     *\\n     * If `target` reverts with a revert reason, it is bubbled up by this\\n     * function (like regular Solidity function calls).\\n     *\\n     * Returns the raw returned data. To convert to the expected return value,\\n     * use https://solidity.readthedocs.io/en/latest/units-and-global-variables.html?highlight=abi.decode#abi-encoding-and-decoding-functions[`abi.decode`].\\n     *\\n     * Requirements:\\n     *\\n     * - `target` must be a contract.\\n     * - calling `target` with `data` must not revert.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(address target, bytes memory data) internal returns (bytes memory) {\\n        return functionCall(target, data, \\\"Address: low-level call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`], but with\\n     * `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, 0, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but also transferring `value` wei to `target`.\\n     *\\n     * Requirements:\\n     *\\n     * - the calling contract must have an ETH balance of at least `value`.\\n     * - the called Solidity function must be `payable`.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(\\n        address target,\\n        bytes memory data,\\n        uint256 value\\n    ) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, value, \\\"Address: low-level call with value failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCallWithValue-address-bytes-uint256-}[`functionCallWithValue`], but\\n     * with `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(\\n        address target,\\n        bytes memory data,\\n        uint256 value,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        require(address(this).balance >= value, \\\"Address: insufficient balance for call\\\");\\n        require(isContract(target), \\\"Address: call to non-contract\\\");\\n\\n        (bool success, bytes memory returndata) = target.call{value: value}(data);\\n        return verifyCallResult(success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {\\n        return functionStaticCall(target, data, \\\"Address: low-level static call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal view returns (bytes memory) {\\n        require(isContract(target), \\\"Address: static call to non-contract\\\");\\n\\n        (bool success, bytes memory returndata) = target.staticcall(data);\\n        return verifyCallResult(success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Tool to verifies that a low level call was successful, and revert if it wasn't, either by bubbling the\\n     * revert reason using the provided one.\\n     *\\n     * _Available since v4.3._\\n     */\\n    function verifyCallResult(\\n        bool success,\\n        bytes memory returndata,\\n        string memory errorMessage\\n    ) internal pure returns (bytes memory) {\\n        if (success) {\\n            return returndata;\\n        } else {\\n            // Look for revert reason and bubble it up if present\\n            if (returndata.length > 0) {\\n                // The easiest way to bubble the revert reason is using memory via assembly\\n\\n                assembly {\\n                    let returndata_size := mload(returndata)\\n                    revert(add(32, returndata), returndata_size)\\n                }\\n            } else {\\n                revert(errorMessage);\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x3f0f878c796dfc7feba6d3c4e3e526c14c7deae8b7bfc71088e3f38fab0d77b3\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\nimport \\\"../proxy/utils/Initializable.sol\\\";\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract ContextUpgradeable is Initializable {\\n    function __Context_init() internal onlyInitializing {\\n        __Context_init_unchained();\\n    }\\n\\n    function __Context_init_unchained() internal onlyInitializing {\\n    }\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n    uint256[50] private __gap;\\n}\\n\",\"keccak256\":\"0x0b0d548f6381370d394f7a434f994dc678b3ef3e755de106109d61343a685ea7\",\"license\":\"MIT\"},\"contracts/DynamicJobs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\r\\npragma solidity 0.8.12;\\r\\n\\r\\nimport { IDynamicJobs } from \\\"./interfaces/IDynamicJobs.sol\\\";\\r\\nimport { IKeeperRegistry } from \\\"./interfaces/IKeeperRegistry.sol\\\";\\r\\nimport { IGasVault } from \\\"./interfaces/IGasVault.sol\\\";\\r\\nimport { IOrchestrator } from \\\"./interfaces/IOrchestrator.sol\\\";\\r\\nimport \\\"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\\\";\\r\\nimport { OwnableUpgradeable } from \\\"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\\\";\\r\\n\\r\\ncontract DynamicJobs is Initializable, OwnableUpgradeable, IDynamicJobs {\\r\\n    // Storage\\r\\n\\r\\n    address public keeperRegistry;\\r\\n    address public orchestrator;\\r\\n    address public creator;\\r\\n    uint256 public gasBalance;\\r\\n    address public gasVault;\\r\\n\\r\\n    /// @dev The mapping of jobState has 3 possiblities\\r\\n    ///      1) 0 means not registered\\r\\n    ///      2) 1 means registered and paused\\r\\n    ///      3) 2 means unpaused and registered (active)\\r\\n    mapping(bytes32 => uint256) public jobState;\\r\\n\\r\\n    // Constructor\\r\\n\\r\\n    /// @custom:oz-upgrades-unsafe-allow constructor\\r\\n    constructor() initializer() {}\\r\\n\\r\\n    function initialize(\\r\\n        address _vaultManager,\\r\\n        address _orchestrator,\\r\\n        address, // Steer multisig not used here\\r\\n        bytes calldata // no need for extra params\\r\\n    ) external initializer {\\r\\n        // Fetch gas vault and keeper registry from orchestrator\\r\\n        keeperRegistry = IOrchestrator(_orchestrator).keeperRegistry();\\r\\n        gasVault = IOrchestrator(_orchestrator).gasVault();\\r\\n\\r\\n        __Ownable_init();\\r\\n        creator = _vaultManager;\\r\\n        orchestrator = _orchestrator;\\r\\n    }\\r\\n\\r\\n    /// @dev Use this function to register jobs.\\r\\n    /// @param _userProvidedData are the calldatas that are provided by the user at the registration time.\\r\\n    /// @param _targetAddresses are the addresses of the contracts on which the jobs needs to be executed.\\r\\n    /// @param _name should be the name of the job.\\r\\n    /// @param _ipfsForJobDetails is the ipfs hash containing job details like the interval for job execution.\\r\\n    function registerJob(\\r\\n        bytes[] calldata _userProvidedData,\\r\\n        address[] calldata _targetAddresses,\\r\\n        string calldata _name,\\r\\n        string calldata _ipfsForJobDetails\\r\\n    ) external {\\r\\n        // Validate param length\\r\\n        require(\\r\\n            _userProvidedData.length == _targetAddresses.length,\\r\\n            \\\"Wrong Address Count\\\"\\r\\n        );\\r\\n\\r\\n        // Only vault owner can register jobs for this vault\\r\\n        require(creator == msg.sender || tx.origin == creator, \\\"Unauthorized\\\");\\r\\n\\r\\n        // Record job hash\\r\\n        bytes32 jobHash = keccak256(\\r\\n            abi.encode(_userProvidedData, _targetAddresses)\\r\\n        );\\r\\n\\r\\n        // Job is currently unpaused\\r\\n        jobState[jobHash] = 2;\\r\\n\\r\\n        // Emit job details so that they can be used offchain\\r\\n        emit JobRegistered(\\r\\n            _userProvidedData,\\r\\n            _targetAddresses,\\r\\n            jobHash,\\r\\n            _name,\\r\\n            _ipfsForJobDetails\\r\\n        );\\r\\n    }\\r\\n\\r\\n    /// @dev Use this function to register jobs and deposit gas in one call\\r\\n    /// @dev Send the amount of gas that is needed to be deposited as msg.value.\\r\\n    /// @param _userProvidedData are the calldatas that are provided by the user at the registration time.\\r\\n    /// @param _targetAddresses are the addresses of the contracts on which the jobs needs to be executed.\\r\\n    /// @param _name is the name of the job.\\r\\n    /// @param _ipfsForJobDetails is the ipfs hash containing job details like the interval for job execution.\\r\\n    function registerJobAndDepositGas(\\r\\n        bytes[] calldata _userProvidedData,\\r\\n        address[] calldata _targetAddresses,\\r\\n        string calldata _name,\\r\\n        string calldata _ipfsForJobDetails\\r\\n    ) external payable {\\r\\n        // Register job\\r\\n        require(\\r\\n            _userProvidedData.length == _targetAddresses.length,\\r\\n            \\\"Wrong Address Count\\\"\\r\\n        );\\r\\n        require(creator == msg.sender, \\\"Unauthorized\\\");\\r\\n        bytes32 jobHash = keccak256(\\r\\n            abi.encode(_userProvidedData, _targetAddresses)\\r\\n        );\\r\\n        jobState[jobHash] = 2;\\r\\n        emit JobRegistered(\\r\\n            _userProvidedData,\\r\\n            _targetAddresses,\\r\\n            jobHash,\\r\\n            _name,\\r\\n            _ipfsForJobDetails\\r\\n        );\\r\\n\\r\\n        // Deposit gas\\r\\n        IGasVault(gasVault).deposit{ value: msg.value }(address(this));\\r\\n    }\\r\\n\\r\\n    /// @dev Use this function to execute Jobs.\\r\\n    /// @dev Only Orchestrator can call this function.\\r\\n    /// @param _userProvidedData are the calldatas that are provided by the user at the registration time.\\r\\n    /// @param _strategyProvidedData are the encoded parameters sent on the time of creation or execution of action in orchestrator according to the strategy.\\r\\n    /// @param _targetAddresses are the addresses of the contracts on which the jobs needs to be executed.\\r\\n    function executeJob(\\r\\n        address[] calldata _targetAddresses,\\r\\n        bytes[] calldata _userProvidedData,\\r\\n        bytes[] calldata _strategyProvidedData\\r\\n    ) external {\\r\\n        bytes32 _jobHash = keccak256(\\r\\n            abi.encode(_userProvidedData, _targetAddresses)\\r\\n        );\\r\\n\\r\\n        // Ensure passed params match user registered job\\r\\n        require(jobState[_jobHash] == 2, \\\"Paused or Not Registered\\\");\\r\\n\\r\\n        // Ensure that job is not paused\\r\\n        require(msg.sender == orchestrator, \\\"Unauthorized\\\");\\r\\n\\r\\n        uint256 jobCount = _targetAddresses.length;\\r\\n\\r\\n        bytes memory completeData;\\r\\n        bool success;\\r\\n        for (uint256 i; i != jobCount; ++i) {\\r\\n            completeData = abi.encodePacked(\\r\\n                _userProvidedData[i],\\r\\n                _strategyProvidedData[i]\\r\\n            );\\r\\n            (success, ) = _targetAddresses[i].call(completeData);\\r\\n\\r\\n            // Revert if this method failed, thus reverting all methods in this job\\r\\n            require(success);\\r\\n        }\\r\\n        emit JobExecuted(_jobHash, msg.sender);\\r\\n    }\\r\\n\\r\\n    /// @dev Use this function to pause or unpause a job\\r\\n    /// @param _jobHash is the keccak of encoded parameters and target addresses\\r\\n    /// @param _toggle pass 1 to pause the job and pass 2 to unpause the job\\r\\n    function setJobState(bytes32 _jobHash, uint256 _toggle) external {\\r\\n        require(creator == msg.sender, \\\"Access Denied\\\");\\r\\n        require(_toggle == 1 || _toggle == 2, \\\"Invalid\\\");\\r\\n        jobState[_jobHash] = _toggle;\\r\\n        emit JobToggledByCreator(_jobHash, _toggle);\\r\\n    }\\r\\n\\r\\n    /// @dev Use this function to withdraw gas associated to this vault\\r\\n    /// @dev Only creator of this vault can call this function\\r\\n    /// @param _amount is the amount of ether in wei that creator of this contract wants to pull out\\r\\n    /// @param to is the address at which the creator wants to pull the deposited ether out\\r\\n    function withdrawGas(uint256 _amount, address payable to) external {\\r\\n        require(msg.sender == creator, \\\"Not Creator\\\");\\r\\n        IGasVault(gasVault).withdraw(_amount, to);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xf784bd8d4d9846cd874e89416c77759331ef8757f70f266f08007434a7f7d268\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/IDynamicJobs.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\r\\n\\r\\npragma solidity 0.8.12;\\r\\n\\r\\ninterface IDynamicJobs {\\r\\n    event JobExecuted(bytes32 jobHash, address executor);\\r\\n    event JobRegistered(\\r\\n        bytes[] jobInfo,\\r\\n        address[] targetAddresses,\\r\\n        bytes32 jobHash,\\r\\n        string name,\\r\\n        string ipfsForJobDetails\\r\\n    );\\r\\n    event JobToggledByCreator(bytes32 jobHash, uint256 toggle);\\r\\n\\r\\n    function registerJob(\\r\\n        bytes[] calldata _userProvidedData,\\r\\n        address[] calldata _targetAddresses,\\r\\n        string calldata _name,\\r\\n        string calldata _ipfsForJobDetails\\r\\n    ) external;\\r\\n\\r\\n    function registerJobAndDepositGas(\\r\\n        bytes[] calldata _userProvidedData,\\r\\n        address[] calldata _targetAddresses,\\r\\n        string calldata _name,\\r\\n        string calldata _ipfsForJobDetails\\r\\n    ) external payable;\\r\\n\\r\\n    function executeJob(\\r\\n        address[] calldata _targetAddresses,\\r\\n        bytes[] calldata _userProvidedData,\\r\\n        bytes[] calldata _strategyProvidedData\\r\\n    ) external;\\r\\n\\r\\n    function setJobState(bytes32 _jobHash, uint256 _toggle) external;\\r\\n\\r\\n    function withdrawGas(uint256 _amount, address payable to) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x6f69a17c1db95268228af688a5ebbbff9ee3ad1f11511969e3bc23cf829a6d92\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/IGasVault.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\r\\n\\r\\npragma solidity 0.8.12;\\r\\n\\r\\ninterface IGasVault {\\r\\n    event Deposited(\\r\\n        address indexed origin,\\r\\n        address indexed target,\\r\\n        uint256 amount\\r\\n    );\\r\\n    event Withdrawn(\\r\\n        address indexed targetAddress,\\r\\n        address indexed to,\\r\\n        uint256 amount\\r\\n    );\\r\\n    event EtherUsed(address indexed account, uint256 amount, bytes32 jobHash);\\r\\n\\r\\n    function deposit(address targetAddress) external payable;\\r\\n\\r\\n    function withdraw(uint256 amount, address payable to) external;\\r\\n\\r\\n    /**\\r\\n     * @dev calculates total transactions remaining. What this means is--assuming that each method (action paid for by the strategist/job owner)\\r\\n     *      costs max amount of gas at max gas price, and uses the max amount of actions, how many transactions can be paid for?\\r\\n     *      In other words, how many actions can this vault guarantee.\\r\\n     * @param targetAddress is address actions will be performed on, and address paying gas for those actions.\\r\\n     * @param highGasEstimate is highest reasonable gas price assumed for the actions\\r\\n     * @return total transactions remaining, assuming max gas is used in each Method\\r\\n     */\\r\\n    function transactionsRemaining(\\r\\n        address targetAddress,\\r\\n        uint256 highGasEstimate\\r\\n    ) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @param targetAddress is address actions will be performed on, and address paying gas for those actions.\\r\\n     * @return uint256 gasAvailable (representing amount of gas available per Method).\\r\\n     */\\r\\n    function gasAvailableForTransaction(\\r\\n        address targetAddress\\r\\n    ) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @param targetAddress is address actions were performed on\\r\\n     * @param originalGas is gas passed in to the action execution order. Used to calculate gas used in the execution.\\r\\n     * @dev should only ever be called by the orchestrator. Is onlyOrchestrator. This and setAsideGas are used to pull gas from the vault for strategy executions.\\r\\n     */\\r\\n    function reimburseGas(\\r\\n        address targetAddress,\\r\\n        uint256 originalGas,\\r\\n        bytes32 newActionHash\\r\\n    ) external;\\r\\n}\\r\\n\",\"keccak256\":\"0xea0b7eabb8372fa0ecfa3fb34ec653937fcb6ca6fd0a678ea016e734c8798578\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/IKeeperRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\r\\n\\r\\npragma solidity 0.8.12;\\r\\n\\r\\ninterface IKeeperRegistry {\\r\\n    enum permissionType {\\r\\n        NONE,\\r\\n        FULL,\\r\\n        SLASHED\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * Any given address can be in one of three different states:\\r\\n        1. Not a keeper.\\r\\n        2. A former keeper who is queued to leave, i.e. they no longer have a keeper license but still have some funds locked in the contract. \\r\\n        3. A current keeper.\\r\\n     * Keepers can themselves each be in one of two states:\\r\\n        1. In good standing. This is signified by bondHeld >= bondAmount.\\r\\n        2. Not in good standing. \\r\\n        If a keepers is not in good standing, they retain their license and ability to vote, but any slash will remove their privileges.\\r\\n     * The only way for a keeper's bondHeld to drop to 0 is for them to leave or be slashed. Either way they lose their license in the process.\\r\\n     */\\r\\n    struct WorkerDetails {\\r\\n        uint256 bondHeld; // bondCoin held by this keeper.\\r\\n        uint256 licenseNumber; // Index of this keeper in the license mapping, i.e. which license they own. If they don't own a license, this will be 0.\\r\\n        uint256 leaveTimestamp; // If this keeper has queued to leave, they can withdraw their bond after this date.\\r\\n    }\\r\\n\\r\\n    event PermissionChanged(\\r\\n        address indexed _subject,\\r\\n        permissionType indexed _permissionType\\r\\n    );\\r\\n    event LeaveQueued(address indexed keeper, uint256 leaveTimestamp);\\r\\n\\r\\n    /**\\r\\n     * @param coinAddress the address of the ERC20 which will be used for bonds; intended to be Steer token.\\r\\n     * @param keeperTransferDelay the amount of time (in seconds) between when a keeper relinquishes their license and when they can\\r\\n            withdraw their funds. Intended to be 2 weeks - 1 month.\\r\\n     */\\r\\n    function initialize(\\r\\n        address coinAddress,\\r\\n        uint256 keeperTransferDelay,\\r\\n        uint256 maxKeepers,\\r\\n        uint256 bondSize\\r\\n    ) external;\\r\\n\\r\\n    function maxNumKeepers() external view returns (uint256);\\r\\n\\r\\n    function currentNumKeepers() external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @dev setup utility function for owner to add initial keepers. Addresses must each be unique and not hold any bondToken.\\r\\n     * @param joiners array of addresses to become keepers.\\r\\n     * note that this function will pull bondToken from the owner equal to bondAmount * numJoiners.\\r\\n     */\\r\\n    function joiningForOwner(address[] calldata joiners) external;\\r\\n\\r\\n    /**\\r\\n     * @param amount Amount of bondCoin to be deposited.\\r\\n     * @dev this function has three uses:\\r\\n        1. If the caller is a keeper, they can increase their bondHeld by amount.\\r\\n        2. If the caller is not a keeper or former keeper, they can attempt to claim a keeper license and become a keeper.\\r\\n        3. If the caller is a former keeper, they can attempt to cancel their leave request, claim a keeper license, and become a keeper.\\r\\n        In all 3 cases registry[msg.sender].bondHeld is increased by amount. In the latter 2, msg.sender's bondHeld after the transaction must be >= bondAmount.\\r\\n     */\\r\\n    function join(uint256 licenseNumber, uint256 amount) external;\\r\\n\\r\\n    function queueToLeave() external;\\r\\n\\r\\n    function leave() external;\\r\\n\\r\\n    /**\\r\\n     * @dev returns true if the given address has the power to vote, false otherwise. The address has the power to vote if it is within the keeper array.\\r\\n     */\\r\\n    function checkLicense(address targetAddress)\\r\\n        external\\r\\n        view\\r\\n        returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @dev slashes a keeper, removing their permissions and forfeiting their bond.\\r\\n     * @param targetKeeper keeper to denounce\\r\\n     * @param amount amount of bondCoin to slash\\r\\n     */\\r\\n    function denounce(address targetKeeper, uint256 amount) external;\\r\\n\\r\\n    /**\\r\\n     * @dev withdraws slashed tokens from the vault and sends them to targetAddress.\\r\\n     * @param amount amount of bondCoin to withdraw\\r\\n     * @param targetAddress address receiving the tokens\\r\\n     */\\r\\n    function withdrawFreeCoin(uint256 amount, address targetAddress) external;\\r\\n\\r\\n    /**\\r\\n     * @dev change bondAmount to a new value.\\r\\n     * @dev implicitly changes keeper permissions. If the bondAmount is being increased, existing keepers will not be slashed or removed. \\r\\n            note, they will still be able to vote until they are slashed.\\r\\n     * @param amount new bondAmount.\\r\\n     */\\r\\n    function changeBondAmount(uint256 amount) external;\\r\\n\\r\\n    /**\\r\\n     * @dev change numKeepers to a new value. If numKeepers is being reduced, this will not remove any keepers, nor will it change orchestrator requirements.\\r\\n        However, it will render keeper licenses > maxNumKeepers invalid and their votes will stop counting.\\r\\n     */\\r\\n    function changeMaxKeepers(uint16 newNumKeepers) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x22cd1f46490b02ec27f433875f8da3d59d84676972b283ab52fe05b5dd52baf6\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/IOrchestrator.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\r\\n\\r\\npragma solidity 0.8.12;\\r\\n\\r\\n/**\\r\\n * @dev Interface of the Orchestrator.\\r\\n */\\r\\ninterface IOrchestrator {\\r\\n    enum ActionState {\\r\\n        PENDING,\\r\\n        COMPLETED\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev MUST trigger when actions are executed.\\r\\n     * @param actionHash: keccak256(targetAddress, jobEpoch, calldatas) used to identify this action\\r\\n     * @param from: the address of the keeper that executed this action\\r\\n     * @param rewardPerAction: SteerToken reward for this action, to be supplied to operator nodes.\\r\\n     */\\r\\n    event ActionExecuted(\\r\\n        bytes32 indexed actionHash,\\r\\n        address from,\\r\\n        uint256 rewardPerAction\\r\\n    );\\r\\n    event ActionFailed(bytes32 indexed actionHash);\\r\\n    event Vote(\\r\\n        bytes32 indexed actionHash,\\r\\n        address indexed from,\\r\\n        bool approved\\r\\n    );\\r\\n\\r\\n    // If an action is approved by >= approvalThresholdPercent members, it is approved\\r\\n    function actionThresholdPercent() external view returns (uint256);\\r\\n\\r\\n    // Address of GasVault, which is the contract used to recompense keepers for gas they spent executing actions\\r\\n    function gasVault() external view returns (address);\\r\\n\\r\\n    // Address of Keeper Registry, which handles keeper verification\\r\\n    function keeperRegistry() external view returns (address);\\r\\n\\r\\n    // Operator node action participation reward. Currently unused.\\r\\n    function rewardPerAction() external view returns (uint256);\\r\\n\\r\\n    /*\\r\\n        bytes32 is hash of action. Calculated using keccak256(abi.encode(targetAddress, jobEpoch, calldatas))\\r\\n\\r\\n        Action approval meaning:\\r\\n        0: Pending\\r\\n        1: Approved\\r\\n        Both votes and overall approval status follow this standard.\\r\\n    */\\r\\n    function actions(bytes32) external view returns (ActionState);\\r\\n\\r\\n    /*  \\r\\n        actionHash => uint256 where each bit represents one keeper vote.\\r\\n    */\\r\\n    function voteBitmaps(bytes32) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @dev initialize the Orchestrator\\r\\n     * @param _keeperRegistry address of the keeper registry\\r\\n     * @param _rewardPerAction is # of SteerToken to give to operator nodes for each completed action (currently unused)\\r\\n     */\\r\\n    function initialize(address _keeperRegistry, uint256 _rewardPerAction)\\r\\n        external;\\r\\n\\r\\n    /**\\r\\n     * @dev allows owner to set/update gas vault address. Mainly used to resolve mutual dependency.\\r\\n     */\\r\\n    function setGasVault(address _gasVault) external;\\r\\n\\r\\n    /**\\r\\n     * @dev set the reward given to operator nodes for their participation in a strategy calculation\\r\\n     * @param _rewardPerAction is amount of steer token to be earned as a reward, per participating operator node per action.\\r\\n     */\\r\\n    function setRewardPerAction(uint256 _rewardPerAction) external;\\r\\n\\r\\n    /**\\r\\n     * @dev vote (if you are a keeper) on a given action proposal\\r\\n     * @param actionHash is the hash of the action to be voted on\\r\\n     * @param vote is the vote to be cast. false: reject, true: approve. false only has an effect if the keeper previously voted true. It resets their vote to false.\\r\\n     */\\r\\n    function voteOnAction(bytes32 actionHash, bool vote) external;\\r\\n\\r\\n    /**\\r\\n     * @dev Returns true if an action with given `actionId` is approved by all existing members of the group.\\r\\n     * It\\u2019s up to the contract creators to decide if this method should look at majority votes (based on ownership)\\r\\n     * or if it should ask consent of all the users irrespective of their ownerships.\\r\\n     */\\r\\n    function actionApprovalStatus(bytes32 actionHash)\\r\\n        external\\r\\n        view\\r\\n        returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @dev Executes the action referenced by the given `actionId` as long as it is approved actionThresholdPercent of group.\\r\\n     * The executeAction executes all methods as part of given action in an atomic way (either all should succeed or none should succeed).\\r\\n     * Once executed, the action should be set as executed (state=3) so that it cannot be executed again.\\r\\n\\r\\n     * @param targetAddress is the address which will be receiving the action's calls.\\r\\n     * @param jobEpoch is the job epoch of this action.\\r\\n     * @param calldatas is the COMPLETE calldata of each method to be called\\r\\n     * note that the hash is created using the sliced calldata, but here it must be complete or the method will revert.\\r\\n     * @param timeIndependentLengths--For each calldata, the number of bytes that is NOT time-sensitive. If no calldatas are time-sensitive, just pass an empty array.\\r\\n     * @param jobHash is the identifier for the job this action is related to. This is used for DynamicJobs to identify separate jobs to the subgraph.\\r\\n     * @return actionState corresponding to post-execution action state. Pending if execution failed, Completed if execution succeeded.\\r\\n     */\\r\\n    function executeAction(\\r\\n        address targetAddress,\\r\\n        uint256 jobEpoch,\\r\\n        bytes[] calldata calldatas,\\r\\n        uint256[] calldata timeIndependentLengths,\\r\\n        bytes32 jobHash\\r\\n    ) external returns (ActionState);\\r\\n}\\r\\n\",\"keccak256\":\"0xc416f20cc7f0e54d878637caa1ef5f1518bfcb7f16089b1e7790d09d96a99373\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50600054610100900460ff1661002c5760005460ff1615610034565b6100346100d5565b61009b5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b606482015260840160405180910390fd5b600054610100900460ff161580156100bd576000805461ffff19166101011790555b80156100cf576000805461ff00191690555b506100f6565b60006100ea306100f060201b610c321760201c565b15905090565b3b151590565b61136780620001066000396000f3fe6080604052600436106100e85760003560e01c806383e227741161008a578063b74795d911610059578063b74795d914610263578063cac409b214610283578063e489cc56146102a3578063f2fde38b146102c357600080fd5b806383e22774146101e55780638b412610146102055780638da5cb5b14610225578063a6f4724f1461024357600080fd5b806343973525116100c6578063439735251461016c57806346f774951461017f578063715018a6146101ba5780637f3d5985146101cf57600080fd5b806302d05d3f146100ed5780631d77dc951461012a578063246581f71461014c575b600080fd5b3480156100f957600080fd5b5060675461010d906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b34801561013657600080fd5b5061014a610145366004610d18565b6102e3565b005b34801561015857600080fd5b5061014a610167366004610d98565b6103c6565b61014a61017a366004610e59565b6105c6565b34801561018b57600080fd5b506101ac61019a366004610f1d565b606a6020526000908152604090205481565b604051908152602001610121565b3480156101c657600080fd5b5061014a610728565b3480156101db57600080fd5b506101ac60685481565b3480156101f157600080fd5b5060655461010d906001600160a01b031681565b34801561021157600080fd5b5061014a610220366004610f36565b61078e565b34801561023157600080fd5b506033546001600160a01b031661010d565b34801561024f57600080fd5b5060695461010d906001600160a01b031681565b34801561026f57600080fd5b5060665461010d906001600160a01b031681565b34801561028f57600080fd5b5061014a61029e366004610f66565b610836565b3480156102af57600080fd5b5061014a6102be366004610e59565b610a4f565b3480156102cf57600080fd5b5061014a6102de366004611000565b610b67565b6067546001600160a01b031633146103325760405162461bcd60e51b815260206004820152600d60248201526c1058d8d95cdcc811195b9a5959609a1b60448201526064015b60405180910390fd5b80600114806103415750806002145b6103775760405162461bcd60e51b8152602060048201526007602482015266125b9d985b1a5960ca1b6044820152606401610329565b6000828152606a602090815260409182902083905581518481529081018390527ffbb8f7dd5489cd225600f85de7227707ceeeded4ea259f70ece12c8419f6c97b910160405180910390a15050565b600054610100900460ff166103e15760005460ff16156103e5565b303b155b6104485760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b6064820152608401610329565b600054610100900460ff1615801561046a576000805461ffff19166101011790555b846001600160a01b03166383e227746040518163ffffffff1660e01b8152600401602060405180830381865afa1580156104a8573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104cc9190611024565b606560006101000a8154816001600160a01b0302191690836001600160a01b03160217905550846001600160a01b031663a6f4724f6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610530573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105549190611024565b606980546001600160a01b0319166001600160a01b039290921691909117905561057c610c38565b606780546001600160a01b038089166001600160a01b031992831617909255606680549288169290911691909117905580156105be576000805461ff00191690555b505050505050565b86851461060b5760405162461bcd60e51b815260206004820152601360248201527215dc9bdb99c81059191c995cdcc810dbdd5b9d606a1b6044820152606401610329565b6067546001600160a01b031633146106355760405162461bcd60e51b815260040161032990611041565b60008888888860405160200161064e949392919061116a565b60408051601f1981840301815282825280516020918201206000818152606a9092529190206002905591507fc0db3309cc0ca74df1def57c090353fce721aa5a6f379b47dc649ed93d7b9c4f906106b6908b908b908b908b9087908c908c908c908c9061119c565b60405180910390a160695460405163f340fa0160e01b81523060048201526001600160a01b039091169063f340fa019034906024016000604051808303818588803b15801561070457600080fd5b505af1158015610718573d6000803e3d6000fd5b5050505050505050505050505050565b6033546001600160a01b031633146107825760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610329565b61078c6000610c6f565b565b6067546001600160a01b031633146107d65760405162461bcd60e51b815260206004820152600b60248201526a2737ba1021b932b0ba37b960a91b6044820152606401610329565b606954604051627b8a6760e11b8152600481018490526001600160a01b0383811660248301529091169062f714ce90604401600060405180830381600087803b15801561082257600080fd5b505af11580156105be573d6000803e3d6000fd5b60008484888860405160200161084f949392919061116a565b60408051601f1981840301815291815281516020928301206000818152606a9093529120549091506002146108c65760405162461bcd60e51b815260206004820152601860248201527f506175736564206f72204e6f74205265676973746572656400000000000000006044820152606401610329565b6066546001600160a01b031633146108f05760405162461bcd60e51b815260040161032990611041565b8560606000805b838114610a0a5788888281811061091057610910611203565b90506020028101906109229190611219565b88888481811061093457610934611203565b90506020028101906109469190611219565b6040516020016109599493929190611260565b60405160208183030381529060405292508a8a8281811061097c5761097c611203565b90506020020160208101906109919190611000565b6001600160a01b0316836040516109a89190611282565b6000604051808303816000865af19150503d80600081146109e5576040519150601f19603f3d011682016040523d82523d6000602084013e6109ea565b606091505b505080925050816109fa57600080fd5b610a03816112bd565b90506108f7565b50604080518581523360208201527f143572cad7ddc116666f3ec9604298a7ec0d02dc052cd16f09a0466d39fe76b9910160405180910390a150505050505050505050565b868514610a945760405162461bcd60e51b815260206004820152601360248201527215dc9bdb99c81059191c995cdcc810dbdd5b9d606a1b6044820152606401610329565b6067546001600160a01b0316331480610ab757506067546001600160a01b031632145b610ad35760405162461bcd60e51b815260040161032990611041565b600088888888604051602001610aec949392919061116a565b60408051601f1981840301815282825280516020918201206000818152606a9092529190206002905591507fc0db3309cc0ca74df1def57c090353fce721aa5a6f379b47dc649ed93d7b9c4f90610b54908b908b908b908b9087908c908c908c908c9061119c565b60405180910390a1505050505050505050565b6033546001600160a01b03163314610bc15760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610329565b6001600160a01b038116610c265760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152608401610329565b610c2f81610c6f565b50565b3b151590565b600054610100900460ff16610c5f5760405162461bcd60e51b8152600401610329906112e6565b610c67610cc1565b61078c610ce8565b603380546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b600054610100900460ff1661078c5760405162461bcd60e51b8152600401610329906112e6565b600054610100900460ff16610d0f5760405162461bcd60e51b8152600401610329906112e6565b61078c33610c6f565b60008060408385031215610d2b57600080fd5b50508035926020909101359150565b6001600160a01b0381168114610c2f57600080fd5b60008083601f840112610d6157600080fd5b50813567ffffffffffffffff811115610d7957600080fd5b602083019150836020828501011115610d9157600080fd5b9250929050565b600080600080600060808688031215610db057600080fd5b8535610dbb81610d3a565b94506020860135610dcb81610d3a565b93506040860135610ddb81610d3a565b9250606086013567ffffffffffffffff811115610df757600080fd5b610e0388828901610d4f565b969995985093965092949392505050565b60008083601f840112610e2657600080fd5b50813567ffffffffffffffff811115610e3e57600080fd5b6020830191508360208260051b8501011115610d9157600080fd5b6000806000806000806000806080898b031215610e7557600080fd5b883567ffffffffffffffff80821115610e8d57600080fd5b610e998c838d01610e14565b909a50985060208b0135915080821115610eb257600080fd5b610ebe8c838d01610e14565b909850965060408b0135915080821115610ed757600080fd5b610ee38c838d01610d4f565b909650945060608b0135915080821115610efc57600080fd5b50610f098b828c01610d4f565b999c989b5096995094979396929594505050565b600060208284031215610f2f57600080fd5b5035919050565b60008060408385031215610f4957600080fd5b823591506020830135610f5b81610d3a565b809150509250929050565b60008060008060008060608789031215610f7f57600080fd5b863567ffffffffffffffff80821115610f9757600080fd5b610fa38a838b01610e14565b90985096506020890135915080821115610fbc57600080fd5b610fc88a838b01610e14565b90965094506040890135915080821115610fe157600080fd5b50610fee89828a01610e14565b979a9699509497509295939492505050565b60006020828403121561101257600080fd5b813561101d81610d3a565b9392505050565b60006020828403121561103657600080fd5b815161101d81610d3a565b6020808252600c908201526b155b985d5d1a1bdc9a5e995960a21b604082015260600190565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b81835260006020808501808196508560051b810191508460005b878110156111145782840389528135601e198836030181126110cb57600080fd5b8701803567ffffffffffffffff8111156110e457600080fd5b8036038913156110f357600080fd5b6111008682898501611067565b9a87019a95505050908401906001016110aa565b5091979650505050505050565b8183526000602080850194508260005b8581101561115f57813561114481610d3a565b6001600160a01b031687529582019590820190600101611131565b509495945050505050565b60408152600061117e604083018688611090565b8281036020840152611191818587611121565b979650505050505050565b60a0815260006111b060a083018b8d611090565b82810360208401526111c3818a8c611121565b905087604084015282810360608401526111de818789611067565b905082810360808401526111f3818587611067565b9c9b505050505050505050505050565b634e487b7160e01b600052603260045260246000fd5b6000808335601e1984360301811261123057600080fd5b83018035915067ffffffffffffffff82111561124b57600080fd5b602001915036819003821315610d9157600080fd5b8385823760008482016000815283858237600093019283525090949350505050565b6000825160005b818110156112a35760208186018101518583015201611289565b818111156112b2576000828501525b509190910192915050565b60006000198214156112df57634e487b7160e01b600052601160045260246000fd5b5060010190565b6020808252602b908201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960408201526a6e697469616c697a696e6760a81b60608201526080019056fea2646970667358221220ebdeadcebe6bf3f82b4d9ee9fb52d87af3a5ef57efc89fe4f59a94e10b8a6fef64736f6c634300080c0033",
+  "deployedBytecode": "0x6080604052600436106100e85760003560e01c806383e227741161008a578063b74795d911610059578063b74795d914610263578063cac409b214610283578063e489cc56146102a3578063f2fde38b146102c357600080fd5b806383e22774146101e55780638b412610146102055780638da5cb5b14610225578063a6f4724f1461024357600080fd5b806343973525116100c6578063439735251461016c57806346f774951461017f578063715018a6146101ba5780637f3d5985146101cf57600080fd5b806302d05d3f146100ed5780631d77dc951461012a578063246581f71461014c575b600080fd5b3480156100f957600080fd5b5060675461010d906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b34801561013657600080fd5b5061014a610145366004610d18565b6102e3565b005b34801561015857600080fd5b5061014a610167366004610d98565b6103c6565b61014a61017a366004610e59565b6105c6565b34801561018b57600080fd5b506101ac61019a366004610f1d565b606a6020526000908152604090205481565b604051908152602001610121565b3480156101c657600080fd5b5061014a610728565b3480156101db57600080fd5b506101ac60685481565b3480156101f157600080fd5b5060655461010d906001600160a01b031681565b34801561021157600080fd5b5061014a610220366004610f36565b61078e565b34801561023157600080fd5b506033546001600160a01b031661010d565b34801561024f57600080fd5b5060695461010d906001600160a01b031681565b34801561026f57600080fd5b5060665461010d906001600160a01b031681565b34801561028f57600080fd5b5061014a61029e366004610f66565b610836565b3480156102af57600080fd5b5061014a6102be366004610e59565b610a4f565b3480156102cf57600080fd5b5061014a6102de366004611000565b610b67565b6067546001600160a01b031633146103325760405162461bcd60e51b815260206004820152600d60248201526c1058d8d95cdcc811195b9a5959609a1b60448201526064015b60405180910390fd5b80600114806103415750806002145b6103775760405162461bcd60e51b8152602060048201526007602482015266125b9d985b1a5960ca1b6044820152606401610329565b6000828152606a602090815260409182902083905581518481529081018390527ffbb8f7dd5489cd225600f85de7227707ceeeded4ea259f70ece12c8419f6c97b910160405180910390a15050565b600054610100900460ff166103e15760005460ff16156103e5565b303b155b6104485760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b6064820152608401610329565b600054610100900460ff1615801561046a576000805461ffff19166101011790555b846001600160a01b03166383e227746040518163ffffffff1660e01b8152600401602060405180830381865afa1580156104a8573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104cc9190611024565b606560006101000a8154816001600160a01b0302191690836001600160a01b03160217905550846001600160a01b031663a6f4724f6040518163ffffffff1660e01b8152600401602060405180830381865afa158015610530573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105549190611024565b606980546001600160a01b0319166001600160a01b039290921691909117905561057c610c38565b606780546001600160a01b038089166001600160a01b031992831617909255606680549288169290911691909117905580156105be576000805461ff00191690555b505050505050565b86851461060b5760405162461bcd60e51b815260206004820152601360248201527215dc9bdb99c81059191c995cdcc810dbdd5b9d606a1b6044820152606401610329565b6067546001600160a01b031633146106355760405162461bcd60e51b815260040161032990611041565b60008888888860405160200161064e949392919061116a565b60408051601f1981840301815282825280516020918201206000818152606a9092529190206002905591507fc0db3309cc0ca74df1def57c090353fce721aa5a6f379b47dc649ed93d7b9c4f906106b6908b908b908b908b9087908c908c908c908c9061119c565b60405180910390a160695460405163f340fa0160e01b81523060048201526001600160a01b039091169063f340fa019034906024016000604051808303818588803b15801561070457600080fd5b505af1158015610718573d6000803e3d6000fd5b5050505050505050505050505050565b6033546001600160a01b031633146107825760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610329565b61078c6000610c6f565b565b6067546001600160a01b031633146107d65760405162461bcd60e51b815260206004820152600b60248201526a2737ba1021b932b0ba37b960a91b6044820152606401610329565b606954604051627b8a6760e11b8152600481018490526001600160a01b0383811660248301529091169062f714ce90604401600060405180830381600087803b15801561082257600080fd5b505af11580156105be573d6000803e3d6000fd5b60008484888860405160200161084f949392919061116a565b60408051601f1981840301815291815281516020928301206000818152606a9093529120549091506002146108c65760405162461bcd60e51b815260206004820152601860248201527f506175736564206f72204e6f74205265676973746572656400000000000000006044820152606401610329565b6066546001600160a01b031633146108f05760405162461bcd60e51b815260040161032990611041565b8560606000805b838114610a0a5788888281811061091057610910611203565b90506020028101906109229190611219565b88888481811061093457610934611203565b90506020028101906109469190611219565b6040516020016109599493929190611260565b60405160208183030381529060405292508a8a8281811061097c5761097c611203565b90506020020160208101906109919190611000565b6001600160a01b0316836040516109a89190611282565b6000604051808303816000865af19150503d80600081146109e5576040519150601f19603f3d011682016040523d82523d6000602084013e6109ea565b606091505b505080925050816109fa57600080fd5b610a03816112bd565b90506108f7565b50604080518581523360208201527f143572cad7ddc116666f3ec9604298a7ec0d02dc052cd16f09a0466d39fe76b9910160405180910390a150505050505050505050565b868514610a945760405162461bcd60e51b815260206004820152601360248201527215dc9bdb99c81059191c995cdcc810dbdd5b9d606a1b6044820152606401610329565b6067546001600160a01b0316331480610ab757506067546001600160a01b031632145b610ad35760405162461bcd60e51b815260040161032990611041565b600088888888604051602001610aec949392919061116a565b60408051601f1981840301815282825280516020918201206000818152606a9092529190206002905591507fc0db3309cc0ca74df1def57c090353fce721aa5a6f379b47dc649ed93d7b9c4f90610b54908b908b908b908b9087908c908c908c908c9061119c565b60405180910390a1505050505050505050565b6033546001600160a01b03163314610bc15760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610329565b6001600160a01b038116610c265760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152608401610329565b610c2f81610c6f565b50565b3b151590565b600054610100900460ff16610c5f5760405162461bcd60e51b8152600401610329906112e6565b610c67610cc1565b61078c610ce8565b603380546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a35050565b600054610100900460ff1661078c5760405162461bcd60e51b8152600401610329906112e6565b600054610100900460ff16610d0f5760405162461bcd60e51b8152600401610329906112e6565b61078c33610c6f565b60008060408385031215610d2b57600080fd5b50508035926020909101359150565b6001600160a01b0381168114610c2f57600080fd5b60008083601f840112610d6157600080fd5b50813567ffffffffffffffff811115610d7957600080fd5b602083019150836020828501011115610d9157600080fd5b9250929050565b600080600080600060808688031215610db057600080fd5b8535610dbb81610d3a565b94506020860135610dcb81610d3a565b93506040860135610ddb81610d3a565b9250606086013567ffffffffffffffff811115610df757600080fd5b610e0388828901610d4f565b969995985093965092949392505050565b60008083601f840112610e2657600080fd5b50813567ffffffffffffffff811115610e3e57600080fd5b6020830191508360208260051b8501011115610d9157600080fd5b6000806000806000806000806080898b031215610e7557600080fd5b883567ffffffffffffffff80821115610e8d57600080fd5b610e998c838d01610e14565b909a50985060208b0135915080821115610eb257600080fd5b610ebe8c838d01610e14565b909850965060408b0135915080821115610ed757600080fd5b610ee38c838d01610d4f565b909650945060608b0135915080821115610efc57600080fd5b50610f098b828c01610d4f565b999c989b5096995094979396929594505050565b600060208284031215610f2f57600080fd5b5035919050565b60008060408385031215610f4957600080fd5b823591506020830135610f5b81610d3a565b809150509250929050565b60008060008060008060608789031215610f7f57600080fd5b863567ffffffffffffffff80821115610f9757600080fd5b610fa38a838b01610e14565b90985096506020890135915080821115610fbc57600080fd5b610fc88a838b01610e14565b90965094506040890135915080821115610fe157600080fd5b50610fee89828a01610e14565b979a9699509497509295939492505050565b60006020828403121561101257600080fd5b813561101d81610d3a565b9392505050565b60006020828403121561103657600080fd5b815161101d81610d3a565b6020808252600c908201526b155b985d5d1a1bdc9a5e995960a21b604082015260600190565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b81835260006020808501808196508560051b810191508460005b878110156111145782840389528135601e198836030181126110cb57600080fd5b8701803567ffffffffffffffff8111156110e457600080fd5b8036038913156110f357600080fd5b6111008682898501611067565b9a87019a95505050908401906001016110aa565b5091979650505050505050565b8183526000602080850194508260005b8581101561115f57813561114481610d3a565b6001600160a01b031687529582019590820190600101611131565b509495945050505050565b60408152600061117e604083018688611090565b8281036020840152611191818587611121565b979650505050505050565b60a0815260006111b060a083018b8d611090565b82810360208401526111c3818a8c611121565b905087604084015282810360608401526111de818789611067565b905082810360808401526111f3818587611067565b9c9b505050505050505050505050565b634e487b7160e01b600052603260045260246000fd5b6000808335601e1984360301811261123057600080fd5b83018035915067ffffffffffffffff82111561124b57600080fd5b602001915036819003821315610d9157600080fd5b8385823760008482016000815283858237600093019283525090949350505050565b6000825160005b818110156112a35760208186018101518583015201611289565b818111156112b2576000828501525b509190910192915050565b60006000198214156112df57634e487b7160e01b600052601160045260246000fd5b5060010190565b6020808252602b908201527f496e697469616c697a61626c653a20636f6e7472616374206973206e6f74206960408201526a6e697469616c697a696e6760a81b60608201526080019056fea2646970667358221220ebdeadcebe6bf3f82b4d9ee9fb52d87af3a5ef57efc89fe4f59a94e10b8a6fef64736f6c634300080c0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "custom:oz-upgrades-unsafe-allow": "constructor"
+      },
+      "executeJob(address[],bytes[],bytes[])": {
+        "details": "Use this function to execute Jobs.Only Orchestrator can call this function.",
+        "params": {
+          "_strategyProvidedData": "are the encoded parameters sent on the time of creation or execution of action in orchestrator according to the strategy.",
+          "_targetAddresses": "are the addresses of the contracts on which the jobs needs to be executed.",
+          "_userProvidedData": "are the calldatas that are provided by the user at the registration time."
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "registerJob(bytes[],address[],string,string)": {
+        "details": "Use this function to register jobs.",
+        "params": {
+          "_ipfsForJobDetails": "is the ipfs hash containing job details like the interval for job execution.",
+          "_name": "should be the name of the job.",
+          "_targetAddresses": "are the addresses of the contracts on which the jobs needs to be executed.",
+          "_userProvidedData": "are the calldatas that are provided by the user at the registration time."
+        }
+      },
+      "registerJobAndDepositGas(bytes[],address[],string,string)": {
+        "details": "Use this function to register jobs and deposit gas in one callSend the amount of gas that is needed to be deposited as msg.value.",
+        "params": {
+          "_ipfsForJobDetails": "is the ipfs hash containing job details like the interval for job execution.",
+          "_name": "is the name of the job.",
+          "_targetAddresses": "are the addresses of the contracts on which the jobs needs to be executed.",
+          "_userProvidedData": "are the calldatas that are provided by the user at the registration time."
+        }
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "setJobState(bytes32,uint256)": {
+        "details": "Use this function to pause or unpause a job",
+        "params": {
+          "_jobHash": "is the keccak of encoded parameters and target addresses",
+          "_toggle": "pass 1 to pause the job and pass 2 to unpause the job"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      },
+      "withdrawGas(uint256,address)": {
+        "details": "Use this function to withdraw gas associated to this vaultOnly creator of this vault can call this function",
+        "params": {
+          "_amount": "is the amount of ether in wei that creator of this contract wants to pull out",
+          "to": "is the address at which the creator wants to pull the deposited ether out"
+        }
+      }
+    },
+    "stateVariables": {
+      "jobState": {
+        "details": "The mapping of jobState has 3 possiblities      1) 0 means not registered      2) 1 means registered and paused      3) 2 means unpaused and registered (active)"
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 540,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 543,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 1211,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_uint256)50_storage"
+      },
+      {
+        "astId": 10,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "51",
+        "type": "t_address"
+      },
+      {
+        "astId": 124,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "52",
+        "type": "t_array(t_uint256)49_storage"
+      },
+      {
+        "astId": 2576,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "keeperRegistry",
+        "offset": 0,
+        "slot": "101",
+        "type": "t_address"
+      },
+      {
+        "astId": 2578,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "orchestrator",
+        "offset": 0,
+        "slot": "102",
+        "type": "t_address"
+      },
+      {
+        "astId": 2580,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "creator",
+        "offset": 0,
+        "slot": "103",
+        "type": "t_address"
+      },
+      {
+        "astId": 2582,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "gasBalance",
+        "offset": 0,
+        "slot": "104",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 2584,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "gasVault",
+        "offset": 0,
+        "slot": "105",
+        "type": "t_address"
+      },
+      {
+        "astId": 2589,
+        "contract": "contracts/DynamicJobs.sol:DynamicJobs",
+        "label": "jobState",
+        "offset": 0,
+        "slot": "106",
+        "type": "t_mapping(t_bytes32,t_uint256)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_uint256)49_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[49]",
+        "numberOfBytes": "1568"
+      },
+      "t_array(t_uint256)50_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[50]",
+        "numberOfBytes": "1600"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_bytes32,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

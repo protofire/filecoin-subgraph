@@ -1,0 +1,236 @@
+specVersion: 0.0.4
+description: Official subgraph for the Steer Protocol
+schema:
+  file: ./subgraph.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: KeeperRegistry
+    network: mainnet
+    source:
+      abi: KeeperRegistry
+      address: "0x1A7e75715d157736103eC429Ff7079994D907472"
+      startBlock: 4333359
+    mapping:
+      abis:
+        - name: KeeperRegistry
+          file: ./abis/KeeperRegistry.json
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Keeper
+        - keeperQueued
+        - keeperStatusEntity
+      eventHandlers:
+        - event: PermissionChanged(indexed address,indexed uint8)
+          handler: handlePermissionChanged
+        - event: LeaveQueued(indexed address,uint256)
+          handler: handleLeaveQueued
+      file: ./src/mappings/KeeperRegistry.ts
+  - kind: ethereum/contract
+    name: Orchestrator
+    network: mainnet
+    source:
+      abi: Orchestrator
+      address: "0x8fB2Cd40046b08F155d06C3A31b69C1Bd2C971e2"
+      startBlock: 4333373
+    mapping:
+      abis:
+        - name: Orchestrator
+          file: ./abis/Orchestrator.json
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Action
+      eventHandlers:
+        - event: Vote(indexed bytes32,indexed address,bool)
+          handler: handleVote
+        - event: ActionExecuted(indexed bytes32,address,uint256)
+          handler: handleActionExecuted
+        - event: ActionFailed(indexed bytes32)
+          handler: handleActionFailed
+      file: ./src/mappings/Orchestrator.ts
+  - kind: ethereum/contract
+    name: StrategyRegistry
+    network: mainnet
+    source:
+      abi: StrategyRegistry
+      address: "0x317EEDB54711681056f37e10d5DE0B55455b476f"
+      startBlock: 4333366
+    mapping:
+      abis:
+        - name: StrategyRegistry
+          file: ./abis/StrategyRegistry.json
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Strategy
+        - Creator
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: StrategyCreated(indexed address,indexed uint256,string)
+          handler: handleStrategyCreated
+      file: ./src/mappings/StrategyRegistry.ts
+  - kind: ethereum/contract
+    name: VaultRegistry
+    network: mainnet
+    source:
+      abi: VaultRegistry
+      address: "0x38a07152ee64C7067fEeBA904D72ABc9a9DA0C77"
+      startBlock: 4333381
+    mapping:
+      abis:
+        - name: VaultRegistry
+          file: ./abis/VaultRegistry.json
+        - name: StrategyRegistry
+          file: ./abis/StrategyRegistry.json
+        - name: SteerPeriphery
+          file: ./abis/SteerPeriphery.json
+        - name: Vault
+          file: ./abis/Vault.json
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+      eventHandlers:
+        - event: VaultCreated(address,address,string,indexed uint256,address)
+          handler: handleVaultCreated
+        - event: VaultStateChanged(indexed address,uint8)
+          handler: handleStateChanged
+        - event: BeaconRegistered(string,address,string)
+          handler: handleBeaconRegistered
+        - event: BeaconDeregistered(string)
+          handler: handleBundleDeregistered
+        - event: BeaconConfigUpdated(string,string)
+          handler: handleBeaconUpdated
+      file: ./src/mappings/Vault.ts
+  - kind: ethereum/contract
+    name: BundleRegistry
+    network: mainnet
+    source:
+      abi: BundleRegistry
+      address: "0x279228AAfd13Bb4642ABB772a248c78555DC39c4"
+      startBlock: 4333421
+    mapping:
+      abis:
+        - name: BundleRegistry
+          file: ./abis/BundleRegistry.json
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Bundle
+      eventHandlers:
+        - event: BundleRegistered(bytes32,string,string,string,string,string,bool,address)
+          handler: handleBundleRegistered
+      file: ./src/mappings/BundleRegistry.ts
+  - kind: ethereum/contract
+    name: GasVault
+    network: mainnet
+    source:
+      abi: GasVault
+      address: "0xe1C56f99a459ED47B629F3D818BcC84826bCed66"
+      startBlock: 4333398
+    mapping:
+      abis:
+        - name: GasVault
+          file: ./abis/GasVault.json
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - VaultGasUsed
+        - VaultGasDeposited
+        - VaultGasWithdrawn
+      eventHandlers:
+        - event: EtherUsed(indexed address,uint256,bytes32)
+          handler: handleEtherUsed
+        - event: Deposited(indexed address,indexed address,uint256)
+          handler: handleGasDeposited
+        - event: Withdrawn(indexed address,indexed address,uint256)
+          handler: handleGasWithdrawn
+      file: ./src/mappings/GasVault.ts
+  - kind: ethereum/contract
+    name: WhitelistRegistry
+    network: mainnet
+    source:
+      abi: WhitelistRegistry
+      address: "0x09eb271b444d1db7163c8555919dE85b20Be7D1d"
+      startBlock: 4333375
+    mapping:
+      abis:
+        - name: WhitelistRegistry
+          file: ./abis/WhitelistRegistry.json
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - WhiteListManager
+        - WhiteListVaultPermission
+      eventHandlers:
+        - event: ManagerAdded(address,address)
+          handler: handleWhitelistManagerAdded
+        - event: PermissionsAdded(address,address,address[])
+          handler: handleWhitelistPermissionsAdded
+        - event: PermissionsRemoved(address,address,address[])
+          handler: handleWhitelistPermissionsRemoved
+      file: ./src/mappings/WhitelistRegistry.ts
+templates:
+  - kind: ethereum/contract
+    name: Vault
+    source:
+      abi: Vault
+    network: mainnet
+    mapping:
+      abis:
+        - name: Vault
+          file: ./abis/MultiPositionLiquidityManager.json
+        - name: VaultUpgraded
+          file: ./abis/VaultUpgraded.json
+        - name: SteerPeriphery
+          file: ./abis/SteerPeriphery.json
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Vault
+        - VaultReport
+        - VaultPosition
+      eventHandlers:
+        - event: Snapshot(uint160,uint256,uint256,uint256)
+          handler: handleVaultSnapshot
+        - event: FeesEarned(uint256,uint256)
+          handler: handleVaultFeesEvent
+        - event: Withdraw(indexed address,indexed address,uint256,uint256,uint256)
+          handler: handleVaultWithdraw
+        - event: Deposit(indexed address,indexed address,uint256,uint256,uint256)
+          handler: handleVaultDeposit
+      file: ./src/mappings/Vault.ts
+  - kind: ethereum/contract
+    name: DynamicJob
+    source:
+      abi: DynamicJobs
+    network: mainnet
+    mapping:
+      abis:
+        - name: DynamicJobs
+          file: ./abis/DynamicJobs.json
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - JobCreator
+        - Job
+        - JobExecution
+      eventHandlers:
+        - event: JobRegistered(bytes[],address[],bytes32,string,string)
+          handler: handleJobRegistered
+        - event: JobExecuted(bytes32,address)
+          handler: handleJobExecuted
+        - event: JobToggledByCreator(bytes32,uint256)
+          handler: handleToggleByCreator
+      file: ./src/mappings/DynamicJobs.ts

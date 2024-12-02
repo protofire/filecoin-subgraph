@@ -1,0 +1,158 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IBundleRegistry",
+  "sourceName": "contracts/interfaces/IBundleRegistry.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "bundle",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "creator",
+          "type": "address"
+        }
+      ],
+      "name": "BundleRegistered",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "bundles",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "bundle",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "source",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "host",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "output",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "active",
+          "type": "bool"
+        },
+        {
+          "internalType": "address",
+          "name": "author",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pause",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_bundle",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_source",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_host",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_output",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "_active",
+          "type": "bool"
+        }
+      ],
+      "name": "register",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "bundle",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "source",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "host",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "output",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "active",
+              "type": "bool"
+            },
+            {
+              "internalType": "address",
+              "name": "author",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct IBundleRegistry.DataSourceAdapter",
+          "name": "bundle",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
